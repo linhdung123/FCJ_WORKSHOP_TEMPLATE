@@ -1,57 +1,39 @@
 ---
 title: "Week 2 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-04-27
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 2 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand the fundamentals of Amazon Elastic Compute Cloud (EC2) and virtual server deployment on AWS.
+* Learn how to securely manage permissions for EC2 instances using IAM Roles.
+* Explore AWS Cloud9 as a cloud-based integrated development environment (IDE).
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks to be completed this week:
 
+| Day | Tasks | Start Date | Completion Date | Reference |
+| --- | ----- | ---------- | --------------- | --------- |
+| 2 | - Learn about **Amazon Elastic Compute Cloud (EC2)**.<br>&emsp;+ EC2 concepts and use cases.<br>&emsp;+ Instance Types.<br>&emsp;+ Amazon Machine Images (AMI).<br>&emsp;+ Amazon EBS and Elastic IP. | 27/04/2026 | 27/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Study **IAM Roles for EC2**.<br>&emsp;+ Understand how IAM Roles work.<br>&emsp;+ Attach IAM Roles to EC2 instances.<br>&emsp;+ Access AWS services without using Access Keys. | 28/04/2026 | 28/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - Learn about **AWS Cloud9**.<br>&emsp;+ Explore the Cloud9 interface.<br>&emsp;+ Create a Cloud9 environment.<br>&emsp;+ Practice using the integrated terminal and code editor. | 29/04/2026 | 29/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - Public Holiday. | 30/04/2026 | 30/04/2026 | |
+| 6 | - Public Holiday. | 01/05/2026 | 01/05/2026 | |
 
 ### Week 2 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Acquired a solid understanding of **Amazon EC2** and its role in deploying and managing virtual servers on AWS.
+* Learned the core components of EC2, including:
+  * Instance Types
+  * Amazon Machine Images (AMI)
+  * Amazon Elastic Block Store (EBS)
+  * Elastic IP Addresses
+* Understood the purpose and benefits of **IAM Roles for EC2**, enabling secure access to AWS services without storing long-term credentials on EC2 instances.
+* Learned how to attach IAM Roles to EC2 instances and gained an understanding of the **Principle of Least Privilege** for secure access management.
+* Became familiar with **AWS Cloud9**, including:
+  * Creating a Cloud9 development environment.
+  * Using the integrated terminal.
+  * Writing, editing, and running code directly within the cloud-based IDE.
+* Strengthened foundational knowledge of AWS compute services, identity and access management, and cloud-based development tools, providing a solid foundation for more advanced AWS services and hands-on labs in the following weeks.

@@ -1,44 +1,55 @@
 ---
 title: "Chia sẻ, đóng góp ý kiến"
-date: 2024-01-01
+date: 2024-07-09
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
+--------------------
+
+> Tại đây bạn có thể chia sẻ những cảm nhận và góp ý về trải nghiệm khi tham gia chương trình **First Cloud Journey (FCJ)**. Những ý kiến của bạn sẽ giúp đội ngũ FCJ cải thiện chương trình và mang đến trải nghiệm tốt hơn cho các thành viên trong tương lai.
+
+## Đánh giá chung
+
+### 1. Môi trường làm việc
+
+Môi trường làm việc thân thiện, cởi mở và luôn tạo cảm giác thoải mái. Các thành viên trong FCJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài thời gian làm việc. Không gian làm việc cũng được tổ chức gọn gàng, giúp mình tập trung hơn. Nếu có thêm nhiều hoạt động giao lưu hoặc team building, các thành viên sẽ có cơ hội kết nối và hiểu nhau nhiều hơn.
+
+### 2. Sự hỗ trợ của Mentor / Team Admin
+
+Mentor luôn hướng dẫn tận tình, giải thích rõ ràng khi mình gặp vướng mắc và khuyến khích mình chủ động tìm hiểu, đặt câu hỏi. Team Admin hỗ trợ đầy đủ về tài liệu cũng như các vấn đề liên quan đến chương trình. Mình đặc biệt đánh giá cao việc mentor luôn tạo cơ hội để mình tự tìm cách giải quyết vấn đề trước khi đưa ra hướng dẫn.
+
+### 3. Sự phù hợp giữa công việc và chuyên ngành học
+
+Các công việc được giao khá phù hợp với kiến thức mình đã học, đồng thời giúp mình tiếp cận thêm nhiều công nghệ và kỹ năng mới, đặc biệt là trong lĩnh vực Cloud Computing. Điều này giúp mình vừa củng cố kiến thức nền tảng, vừa có thêm kinh nghiệm thực tế.
+
+### 4. Cơ hội học hỏi và phát triển kỹ năng
+
+Trong thời gian tham gia chương trình, mình học được nhiều kiến thức về AWS, kỹ năng làm việc nhóm, quản lý công việc và cách giao tiếp trong môi trường chuyên nghiệp. Ngoài ra, các buổi workshop và chia sẻ từ mentor cũng giúp mình hiểu rõ hơn về định hướng nghề nghiệp trong tương lai.
+
+### 5. Văn hóa và tinh thần đồng đội
+
+Mọi người trong FCJ luôn sẵn sàng hỗ trợ nhau, tạo nên môi trường học tập và làm việc tích cực. Dù mỗi người có nhiệm vụ riêng nhưng luôn phối hợp và chia sẻ kinh nghiệm khi cần. Điều này giúp mình cảm thấy thoải mái và có thêm động lực trong quá trình tham gia chương trình.
+
+### 6. Chính sách và quyền lợi dành cho thành viên
+
+FCJ tạo điều kiện để các thành viên được học tập, thực hành và tham gia nhiều hoạt động bổ ích. Ngoài việc được tiếp cận với các kiến thức thực tế về AWS, mình còn có cơ hội tham gia workshop, seminar và nhận được sự hỗ trợ nhiệt tình từ mentor trong suốt quá trình học tập.
+
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
->Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud Journey, giúp team FCJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
+## Một số câu hỏi khác
 
-### Đánh giá chung
+* Điều bạn **hài lòng nhất** trong thời gian tham gia chương trình là gì?
+- Theo em là em học được tính tự giác và chủ động học hỏi và được làm quen với môi trường chuyên nghiệp hơn nữa em thấy anh chị rất quan tâm và tận tình chỉ dạy tụi em mặc dù tụi em có nhiều chổ sai anh chị chỉ ra chổ sai và tận tình giải thích. 
+* Theo bạn, chương trình **cần cải thiện** những điểm nào để hỗ trợ tốt hơn cho các thành viên sau?
+- Em nghĩ nên có các bài lab về vẽ kiến trúc hoặc các bài test khi tụi em học trên youtube để tụi em có thể hiểu biết sâu về các dịch vụ hơn.
+* Nếu có bạn bè quan tâm đến Cloud Computing, bạn có **giới thiệu họ tham gia FCJ không?** Vì sao?
+- Có. Vì đây là một môi trường tốt để làm quen trước khi đi làm và tiếp xúc với nhiều kiến thức, trải nghiệm thực tế từ các buổi event.
 
-**1. Môi trường làm việc**  
-Môi trường làm việc rất thân thiện và cởi mở. Các thành viên trong FCJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp mình tập trung tốt hơn. Tuy nhiên, mình nghĩ có thể bổ sung thêm một số buổi giao lưu hoặc team bonding để mọi người hiểu nhau hơn.
+---
 
-**2. Sự hỗ trợ của mentor / team admin**  
-Mentor hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình đặt câu hỏi. Team admin hỗ trợ các thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi. Mình đánh giá cao việc mentor cho phép mình thử và tự xử lý vấn đề thay vì chỉ đưa đáp án.
+## Đề xuất và mong muốn
 
-**3. Sự phù hợp giữa công việc và chuyên ngành học**  
-Công việc mình được giao phù hợp với kiến thức mình đã học ở trường, đồng thời mở rộng thêm những mảng mới mà mình chưa từng được tiếp cận. Nhờ vậy, mình vừa củng cố kiến thức nền tảng, vừa học thêm kỹ năng thực tế.
-
-**4. Cơ hội học hỏi & phát triển kỹ năng**  
-Trong quá trình thực tập, mình học được nhiều kỹ năng mới như sử dụng công cụ quản lý dự án, kỹ năng làm việc nhóm, và cả cách giao tiếp chuyên nghiệp trong môi trường công ty. Mentor cũng chia sẻ nhiều kinh nghiệm thực tế giúp mình định hướng tốt hơn cho sự nghiệp.
-
-**5. Văn hóa & tinh thần đồng đội**  
-Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn vui vẻ. Khi có dự án gấp, mọi người cùng nhau cố gắng, hỗ trợ không phân biệt vị trí. Điều này giúp mình cảm thấy mình là một phần của tập thể, dù chỉ là thực tập sinh.
-
-**6. Chính sách / phúc lợi cho thực tập sinh**  
-Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về thời gian linh hoạt khi cần thiết. Ngoài ra, việc được tham gia các buổi đào tạo nội bộ là một điểm cộng lớn.
-
-
-### Một số câu hỏi khác
-- Điều bạn **hài lòng nhất** trong thời gian thực tập?  
-- Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
-- Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
-
-
-### Đề xuất & mong muốn
-- Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?  
-- Bạn có muốn tiếp tục chương trình này trong tương lai?
-- Góp ý khác (tự do chia sẻ):
+* Bạn có đề xuất gì để chương trình First Cloud Journey ngày càng hoàn thiện hơn?
+* Bạn có mong muốn tiếp tục đồng hành cùng FCJ trong các chương trình sắp tới không?
+- Nếu có thể thì em sẽ tiếp tục tham gia chương trình này
+* Những góp ý hoặc chia sẻ khác (nếu có):

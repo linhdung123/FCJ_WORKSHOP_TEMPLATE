@@ -1,126 +1,63 @@
 ---
 title: "Blog 2"
-date: 2024-01-01
+date: 2026-07-09
 weight: 1
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+## Web Search on Amazon Bedrock AgentCore: AI Agents Can Now Browse the Web Without Data Leaving AWS
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
+Hello everyone, while researching Agentic AI on AWS, I noticed that AWS just announced the General Availability of the Web Search feature on Amazon Bedrock AgentCore. This is a fully managed web search tool that allows AI agents to look up the latest information on the Internet while keeping all queries entirely within the customer's AWS environment. I've summarized the core points to share with the community for reference.
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+### 1. What is Amazon Bedrock AgentCore?
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+Amazon Bedrock AgentCore is AWS's platform for building, deploying, and operating AI agents at production scale. Instead of developers managing the infrastructure themselves (runtime, memory, identity, agent behavior observability, etc.), AgentCore provides these as a managed service. It works with all popular open-source frameworks like Strands Agents, LangGraph, CrewAI, or LlamaIndex, alongside any foundation model.
 
----
+An inherent problem with AI agents is that a model's knowledge is "frozen" at the time of training. A financial advisory agent doesn't know this morning's news; a customer support agent doesn't know the policy that changed last week. Previously, for an agent to search the web, developers had to integrate third-party search APIs—and this is exactly what this new feature addresses.
 
-## Architecture Guidance
+### 2. What's New With This Feature?
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+Web Search is provided as a pre-built connector target on the AgentCore Gateway, communicating via the Model Context Protocol (MCP) standard. The agent simply sends queries in natural language, and Web Search returns the most relevant snippets along with source URLs, titles, and publication dates—providing enough context for the model to reason and generate grounded answers with citations.
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+**Key technical highlights:**
 
-**The solution architecture is now as follows:**
+* **Built on Amazon's own search infrastructure:** It shares the same search foundation powering Alexa+, Amazon Quick, and Kiro, optimized for agentic retrieval—returning high-value snippets instead of raw link lists, delivering "more intelligence per token."
+* **Multi-source grounding:** It combines public web indices with the Amazon Knowledge Graph—structured entity data and verified information, including real-time data like stock prices or sports scores.
+* **Zero data egress:** User prompts and search queries are not sent to external search providers outside of AWS—the biggest differentiator compared to integrating Google or Bing APIs yourself.
+* **MCP standard:** Because it routes through the Gateway using an open protocol, this feature works with any agent framework and isn't locked into a specific SDK.
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+### 3. Practical Applications
 
----
+Compared to the old approach, the operational value is very clear:
 
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
+* **Eliminating the "plumbing":** No need to register for a separate search vendor, or write custom logic for orchestration, authentication, retries, and billing just for searching.
+* **Meeting compliance requirements:** For industries like finance, healthcare, and insurance—where sending user prompts to external services is a legal hurdle—the zero data egress architecture significantly simplifies governance.
+* **Cited answers:** Source URLs and publication dates accompanying each result help reduce hallucinations and increase reliability when agents answer current events.
+* **Typical use cases:** A market research agent needing the latest news, a support chatbot needing to look up newly launched product specs, or a content creation agent tracking ongoing events.
 
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
+A real-world customer cited by AWS is Gen Digital (Norton's parent company): they use Web Search for their Norton Revamp product to suggest personal branding content based on what's currently happening, and they highly value that the queries never leave their trusted AWS environment.
 
----
+### 4. Limitations and Deployment Considerations
 
-## Technology Choices and Communication Scope
+* **Limited availability zones:** At GA, Web Search is only available in the US East (N. Virginia) region. For those of us in Vietnam using `ap-southeast-1`, we will need to monitor the region expansion roadmap or accept higher latency with cross-region calls.
+* **Does not replace Knowledge Bases:** Web Search solves the problem of public and current knowledge; for internal enterprise data, you still need to combine it with Bedrock Knowledge Bases (RAG)—these two pieces are complementary, not mutually exclusive.
+* **Pay-as-you-go costs:** The pricing model requires no upfront commitment, but agents can decide to search multiple times in a single session. You need to limit tool-use loops and monitor costs just like any other agentic workload.
+* **Quality evaluation is still required:** Cited results make verification easier, but when an agent uses public web sources, filtering out low-quality sources is still your design responsibility (you can combine this with AgentCore Evaluations and Guardrails).
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+### 5. Personal Review
 
----
+In my opinion, this is the missing piece that anyone who has ever built a "web-searching" agent will immediately find valuable. The hard part of this feature was never calling a search API—it was the tedious background work: managing keys, parsing results, re-ranking, and the biggest headache of all: explaining to the security department where user data is going. AWS wrapping everything into an MCP-standard connector target, running on Amazon's own search infrastructure, is the "right way" for enterprise environments.
 
-## The Pub/Sub Hub
-
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
-
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+The points I will continue to monitor are the search result quality compared to dedicated search APIs, and the speed of region expansion—because for real-time chat applications, a cross-hemisphere search loop can noticeably impact the user experience.
 
 ---
 
-## Core Microservice
+### Conclusion
+Web Search on Amazon Bedrock AgentCore is a significant step forward in helping AI agents break free from their training-time knowledge limits without compromising data security. With integration via the MCP standard, multi-source grounding with citations, and a zero data egress architecture, this will be a default, worthy choice for anyone bringing agents from demo to production on AWS. I believe that in the near future, "agents capable of secure web searching" will become a standard rather than an add-on feature.
 
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
+I hope this summary gives you a quick overview of AWS's direction in the Agentic AI space!
 
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
+**References:**
 
----
-
-## Front Door Microservice
-
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
-
----
-
-## Staging ER7 Microservice
-
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
-
----
-
-## New Features in the Solution
-
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+ - https://aws.amazon.com/blogs/aws/announcing-web-search-on-a…re-ground-your-ai-agents-in-current-accurate-web-knowledge/
+ - https://aws.amazon.com/blogs/machine-learning/new-in-amazon…uild-agents-with-broader-knowledge-and-continuous-learning/

@@ -1,126 +1,201 @@
 ---
+
 title: "Blog 1"
-date: 2024-01-01
+date: 2026-06-04
 weight: 1
 chapter: false
-pre: " <b> 3.1. </b> "
+pre: "  3.1.  "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+# Cloud Security with Amazon VPC Encryption Controls
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
+In modern enterprise systems, encrypting data in transit is a critical requirement to meet security standards such as **HIPAA**, **PCI DSS**, **FedRAMP**, and **SOC 2**. However, as AWS infrastructure scales to hundreds or thousands of resources, identifying which traffic is encrypted and which resources are still transmitting data in plaintext becomes highly challenging.
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
-
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+To address this challenge, AWS has introduced **Amazon VPC Encryption Controls**—a new security feature that helps organizations monitor, control, and enforce encryption in transit between AWS resources within or across multiple VPCs in a Region.
 
 ---
 
-## Architecture Guidance
+## What is Amazon VPC Encryption Controls?
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+Amazon VPC Encryption Controls is a security feature that allows you to:
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+* Monitor the encryption status of network traffic within a VPC.
+* Identify resources that still allow unencrypted data transmission.
+* Enforce a policy that mandates data encryption across your entire AWS environment.
+* Simplify the auditing process and meet compliance requirements.
 
-**The solution architecture is now as follows:**
+This feature leverages two primary encryption mechanisms:
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+* **Application Layer Encryption** such as TLS.
+* **Hardware-based encryption by the AWS Nitro System**, integrated into modern instance generations.
 
----
+Beyond Amazon EC2, AWS has expanded Nitro's encryption capabilities to several other services, including:
 
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
+* Application Load Balancer (ALB)
+* Network Load Balancer (NLB)
+* AWS Fargate
+* Amazon EKS
+* Amazon ECS
+* Amazon RDS
+* Amazon OpenSearch Service
+* Amazon MSK
+* AWS Transit Gateway
 
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
-
----
-
-## Technology Choices and Communication Scope
-
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+As a result, organizations can deploy encryption consistently at scale without the need to build a complex PKI system or rely on multiple third-party security solutions.
 
 ---
 
-## The Pub/Sub Hub
+## Two Primary Operating Modes
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
+### 1. Monitor Mode – Observe before Enforcing
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+AWS recommends that all existing VPCs start with **Monitor Mode**.
 
----
+In this mode, VPC Encryption Controls **does not block traffic**, but merely records and evaluates the encryption status of connections.
 
-## Core Microservice
+A new data field named **encryption-status** is added to **VPC Flow Logs** with the following values:
 
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
+| Value | Meaning |
+| --- | --- |
+| 0 | Unencrypted |
+| 1 | Encrypted by AWS Nitro |
+| 2 | Application layer encryption (TLS) |
+| 3 | Nitro + TLS |
+| No value | Unknown |
 
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
+Through Flow Logs, administrators can quickly identify:
 
----
+* Which data flows are protected.
+* Which services still allow plaintext transmission.
+* Which resources require an upgrade prior to enforcing encryption policies.
 
-## Front Door Microservice
+Additionally, AWS provides the following API:
 
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
+```
+GetVpcResourcesBlockingEncryptionEnforcement
 
----
+```
 
-## Staging ER7 Microservice
-
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
+This API helps list resources that do not meet encryption requirements before transitioning to Enforce Mode.
 
 ---
 
-## New Features in the Solution
+## Transitioning to a Fully Encrypted Environment
 
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+After evaluating the system using Monitor Mode, organizations can proceed to transition their infrastructure.
+
+### Services Automatically Upgraded by AWS
+
+AWS automatically transitions the underlying infrastructure to AWS Nitro for the following services:
+
+* Application Load Balancer
+* Network Load Balancer
+* AWS Fargate
+* Amazon EKS Control Plane
+
+This process occurs with:
+
+* Zero downtime.
+* No configuration changes required.
+* No manual intervention.
+
+### Services Requiring Manual Upgrades
+
+Certain resources still require customers to proactively transition them, including:
+
+* Older generation EC2 instances
+* Auto Scaling Groups
+* Amazon RDS
+* Amazon ElastiCache
+* Amazon Redshift
+* Amazon ECS using EC2
+* Amazon OpenSearch Service
+* Amazon EMR
+
+If these resources are using instances that do not support Nitro, organizations must:
+
+* Migrate to modern EC2 instance types that support the AWS Nitro System.
+* Alternatively, deploy TLS at the application layer.
+
+---
+
+## Enforce Mode – Enforcing Encryption Policies
+
+Once the evaluation and transition process is complete, organizations can activate **Enforce Mode**.
+
+This is the phase where AWS actively enforces the security policy.
+
+When Enforce Mode is enabled:
+
+* You cannot launch older generation EC2 instances that do not support AWS Nitro.
+* You cannot deploy resources that permit unencrypted traffic.
+* Only encrypted connections are permitted to operate within the VPC.
+
+As a result, all internal traffic is consistently protected without relying entirely on users correctly configuring TLS.
+
+---
+
+## Supported Exclusions
+
+In practice, certain resources need to communicate outside the AWS infrastructure and cannot be fully managed by VPC Encryption Controls.
+
+AWS allows you to configure **Exclusions** for resources such as:
+
+* Internet Gateway
+* NAT Gateway
+* Egress-only Internet Gateway
+* Virtual Private Gateway
+* VPC Peering
+* AWS Lambda in a VPC
+* VPC Lattice
+* Amazon EFS
+
+These exclusions are fully documented during the auditing process, helping organizations demonstrate their compliance posture when undergoing audits.
+
+---
+
+## Benefits for Organizations
+
+### Enhanced Security
+
+* Ensures all internal traffic is encrypted.
+* Mitigates the risk of data leakage during transmission.
+
+### Simplified Operations
+
+Organizations are relieved from:
+
+* Building dedicated PKI systems.
+* Managing large volumes of digital certificates.
+* Deploying disparate security solutions.
+
+### Support for Auditing and Compliance
+
+VPC Encryption Controls provides:
+
+* Encryption status reporting.
+* VPC Flow Logs tailored for auditing.
+* Evidence to satisfy standards such as HIPAA, PCI DSS, and FedRAMP.
+
+### Leveraging AWS Nitro
+
+Because the encryption is handled at the hardware level, there is virtually no performance impact on your applications.
+
+---
+
+## Conclusion
+
+Amazon VPC Encryption Controls represents a significant step forward in simplifying network security on AWS. Instead of having to build complex monitoring and encryption control systems, organizations can utilize this built-in solution to:
+
+* Monitor the encryption status of all network traffic.
+* Identify security blind spots.
+* Enforce encryption policies centrally.
+* Meet strict compliance requirements.
+
+If your organization is working towards certifications like **HIPAA**, **PCI DSS**, or **FedRAMP**, deploying **Monitor Mode** is the ideal first step to evaluate your infrastructure's security posture before transitioning to **Enforce Mode**.
+
+---
+
+## References
+
+* [https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html)
+* [https://aws.amazon.com/blogs/aws/introducing-vpc-encryption-controls-enforce-encryption-in-transit-within-and-across-vpcs-in-a-region/](https://aws.amazon.com/blogs/aws/introducing-vpc-encryption-controls-enforce-encryption-in-transit-within-and-across-vpcs-in-a-region/)

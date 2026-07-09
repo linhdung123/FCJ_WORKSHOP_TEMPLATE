@@ -1,13 +1,11 @@
 ---
 title: "Worklog Tuần 1"
-date: 2024-01-01
+date: 2026-04-20
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 1:
@@ -18,42 +16,23 @@ pre: " <b> 1.1. </b> "
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 20/04/2026   | 20/04/2026      |
+| 3   | - Đăng ký tài khoản AWS và làm các nhiệm vụ lấy Free credit                                              | 21/04/2026   | 21/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Học về VPC<br>&emsp; + Khái niệm, vai trò <br>&emsp; | 22/04/2026   | 22/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Tìm hiểu sâu về các set up , ,: <br>&emsp; + subnet, route table, igw, NAT, Security Group <br>&emsp; +  | 23/04/2026   | 23/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Thực hành:** <br>&emsp; + Làm lab về, VPC <br>&emsp; + Làm lab tạo vpc, subnet <br>&emsp; + | 24/04/2026   | 24/04/2026     | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 1:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Đã làm quen với môi trường thực tập, các thành viên trong chương trình FCJ và nắm rõ nội quy, quy định cần tuân thủ trong quá trình tham gia.
+* Đăng ký thành công tài khoản AWS, hoàn thành các nhiệm vụ để nhận AWS Free Credits, sẵn sàng cho việc thực hành trên nền tảng AWS.
+* Nắm được các kiến thức cơ bản về Amazon VPC, bao gồm khái niệm, vai trò của VPC trong việc xây dựng hạ tầng mạng trên AWS và hiểu sự khác biệt giữa các dịch vụ máy chủ cũng như các tính năng chính của từng dịch vụ.
+* Hiểu rõ các thành phần quan trọng trong kiến trúc mạng AWS như Subnet, Route Table, Internet Gateway (IGW), NAT Gateway và Security Group, đồng thời biết được chức năng và cách các thành phần này phối hợp với nhau để xây dựng hệ thống mạng an toàn.
+* Hoàn thành các bài thực hành về Amazon VPC, bao gồm tạo VPC, Subnet và cấu hình các thành phần mạng cơ bản, giúp củng cố kiến thức lý thuyết và nâng cao kỹ năng thao tác trên AWS.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+  
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
 
 

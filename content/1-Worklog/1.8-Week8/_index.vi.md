@@ -1,59 +1,46 @@
 ---
 title: "Worklog Tuần 8"
-date: 2024-01-01
-weight: 1
+date: 2026-06-08
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 8
 
-### Mục tiêu tuần 8:
+* Kiểm tra và tối ưu chi phí sử dụng AWS.
+* Tìm hiểu và viết blog về bảo mật trên AWS.
+* Hoàn thành các báo cáo sự kiện và tham gia hoạt động của First Cloud Journey.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc cần triển khai trong tuần này
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --------- | ------------ | --------------- | -------------- |
+| 2 | Nghỉ | 08/06/2026 | 08/06/2026 | |
+| 3 | Kiểm tra AWS Billing và xác định nguyên nhân phát sinh chi phí | 09/06/2026 | 09/06/2026 | AWS Management Console |
+| 4 | Tìm hiểu và viết blog về **Amazon VPC Encryption Controls** | 10/06/2026 | 10/06/2026 | AWS Documentation |
+| 5 | Viết báo cáo cho sự kiện ngày 09/06 và 23/06 | 11/06/2026 | 11/06/2026 | |
+| 6 | Hoàn thiện báo cáo cho sự kiện ngày 09/06 và 23/06 | 12/06/2026 | 12/06/2026 | |
+| 7 | Tham gia sự kiện First Cloud Journey | 13/06/2026 | 13/06/2026 | |
 
+### Kết quả đạt được tuần 8
 
-### Kết quả đạt được tuần 8:
+* Xác định được nguyên nhân phát sinh chi phí trên tài khoản AWS.
+* Hoàn thành bài blog về **Amazon VPC Encryption Controls**.
+* Hoàn thành báo cáo của hai sự kiện và tham gia Community Day.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Kiến thức học được
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Hiểu tầm quan trọng của việc theo dõi **AWS Billing** và **Cost Management** để kiểm soát chi phí.
+* Biết cần kiểm tra và xóa các tài nguyên không còn sử dụng như **Elastic IP Addresses**, **Amazon EBS Snapshots** và các tài nguyên phát sinh chi phí khác.
+* Tìm hiểu các khái niệm cơ bản về **Amazon VPC Encryption Controls** và tăng cường bảo mật dữ liệu trên AWS.
+* Rút kinh nghiệm nên hoàn thành báo cáo ngay sau mỗi sự kiện để đảm bảo nội dung đầy đủ và chính xác.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+### Khó khăn gặp phải
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Mất nhiều thời gian xác định dịch vụ gây phát sinh chi phí, đặc biệt là **Elastic IP** còn tồn tại ở Region **us-east-1**.
+* Việc tổng hợp báo cáo sự kiện mất nhiều thời gian do một số nội dung được trình bày bằng tiếng Anh và cần đối chiếu lại tài liệu.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+### Mục tiêu tuần tiếp theo
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Học cách thiết kế và vẽ kiến trúc hệ thống trên AWS.

@@ -1,58 +1,44 @@
 ---
 title: "Worklog Tuần 12"
-date: 2024-01-01
-weight: 2
+date: 2026-07-06
+weight: 12
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-### Mục tiêu tuần 12:
+### Mục tiêu tuần 12
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hoàn thành demo dự án thực tập.
+* Hoàn thiện báo cáo Proposal và Workshop.
+* Tổng hợp và hoàn thiện báo cáo thực tập.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc cần triển khai trong tuần này
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --------- | ------------ | --------------- | -------------- |
+| 2 | Hoàn thiện demo dự án | 06/07/2026 | 06/07/2026 | Tài liệu dự án |
+| 3 | Tiếp tục hoàn thiện và kiểm thử demo | 07/07/2026 | 07/07/2026 | Tài liệu dự án |
+| 4 | Hoàn thiện demo và rà soát các chức năng | 08/07/2026 | 08/07/2026 | Tài liệu dự án |
+| 5 | Viết báo cáo Proposal và Workshop | 09/07/2026 | 09/07/2026 | Tài liệu thực tập |
+| 6 | Hoàn thiện báo cáo Proposal và Workshop | 10/07/2026 | 10/07/2026 | Tài liệu thực tập |
 
-### Kết quả đạt được tuần 12:
+### Kết quả đạt được
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hoàn thành bản demo của dự án thực tập.
+* Hoàn thành báo cáo Proposal và Workshop.
+* Hoàn thiện báo cáo thực tập để chuẩn bị nộp.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+### Kiến thức học được
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Hiểu quy trình chuẩn bị và trình bày một bản demo hoàn chỉnh cho dự án trên AWS.
+* Rèn luyện kỹ năng kiểm thử, rà soát và khắc phục lỗi trước khi trình bày sản phẩm.
+* Củng cố kỹ năng tổng hợp tài liệu, viết báo cáo kỹ thuật và trình bày kết quả thực tập một cách rõ ràng, đầy đủ.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+### Khó khăn gặp phải
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Mất thời gian kiểm tra và hoàn thiện các chức năng để đảm bảo demo hoạt động ổn định.
+* Cần rà soát nhiều tài liệu để hoàn thiện báo cáo Proposal, Workshop và báo cáo thực tập đúng yêu cầu.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+### Mục tiêu tuần tiếp theo
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thành các thủ tục kết thúc kỳ thực tập và chuẩn bị bảo vệ báo cáo (nếu có).

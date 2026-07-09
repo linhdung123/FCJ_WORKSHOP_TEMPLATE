@@ -1,126 +1,135 @@
 ---
 title: "Blog 3"
-date: 2024-01-01
+date: 2024-07-09
 weight: 1
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+# Protecting Data on AWS with AWS Backup
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
+When operating systems in the cloud, data is one of the most valuable assets for any organization. Although AWS provides highly available infrastructure, risks such as accidental data deletion, configuration errors, ransomware attacks, or human mistakes can still occur. Therefore, implementing a reliable backup and recovery strategy is essential for ensuring business continuity.
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
-
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+AWS Backup is a fully managed service that simplifies data backup and recovery across multiple AWS services through a centralized management interface.
 
 ---
 
-## Architecture Guidance
+# 1. What is AWS Backup?
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+AWS Backup is a managed service that enables organizations to automate backup processes for various AWS services without building and maintaining their own backup infrastructure.
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+Instead of configuring backups individually for each AWS service, administrators can create a single Backup Plan and apply it to the desired resources.
 
-**The solution architecture is now as follows:**
+AWS Backup currently supports a wide range of AWS services, including:
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+- Amazon EC2
+- Amazon EBS
+- Amazon RDS
+- Amazon DynamoDB
+- Amazon EFS
+- Amazon FSx
+- Amazon S3
+- Amazon Aurora
+- AWS Storage Gateway
+- Amazon DocumentDB
 
----
-
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
-
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
+This centralized approach allows organizations to manage all backup policies from a single console.
 
 ---
 
-## Technology Choices and Communication Scope
+# 2. Key Features
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+AWS Backup provides several features that simplify backup management and improve data protection.
 
----
+### Backup Plan
 
-## The Pub/Sub Hub
+A Backup Plan allows administrators to define:
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
+- Backup schedules
+- Retention periods
+- Automated backup frequency
+- Backup lifecycle policies
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+### Backup Vault
 
----
+Backup copies are stored in a Backup Vault, which provides:
 
-## Core Microservice
+- Encryption using AWS KMS
+- Access control and permissions
+- Centralized backup management
 
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
+### Cross-Region Backup
 
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
+AWS Backup enables organizations to copy backup data to another AWS Region, improving disaster recovery capabilities and enhancing data resilience.
+
+### Cross-Account Backup
+
+Organizations can also copy backups to another AWS account, providing an additional layer of protection and supporting disaster recovery strategies.
 
 ---
 
-## Front Door Microservice
+# 3. Benefits of Using AWS Backup
 
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
+Implementing AWS Backup offers several practical advantages.
+
+### Reduced Risk of Data Loss
+
+Even if data is accidentally deleted or system failures occur, organizations can quickly restore information from backup copies.
+
+### Simplified Administration
+
+Administrators no longer need to configure backup solutions separately for each AWS service.
+
+All backup policies are managed centrally.
+
+### Compliance Support
+
+AWS Backup helps organizations meet regulatory and compliance requirements, including:
+
+- HIPAA
+- PCI DSS
+- ISO 27001
+- SOC
+- FedRAMP
+
+### Improved Disaster Recovery
+
+By storing backup copies across multiple AWS Regions and AWS accounts, organizations can build a more resilient disaster recovery strategy.
 
 ---
 
-## Staging ER7 Microservice
+# 4. Best Practices
 
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
+To maximize the effectiveness of AWS Backup, organizations should consider the following recommendations:
+- Avoid storing all backups in a single AWS Region.
+- Configure appropriate retention periods to optimize storage costs.
+- Encrypt Backup Vaults using AWS KMS.
+- Regularly test restore operations instead of only creating backups.
+- Apply Backup Policies through AWS Organizations when managing multiple AWS accounts.
+
+Periodic recovery testing ensures that backup copies remain valid and available whenever they are needed.
 
 ---
 
-## New Features in the Solution
+# 5. Personal Perspective
 
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+In my opinion, AWS Backup is one of the most important AWS services that is often overlooked during cloud architecture design. Many organizations focus on deploying applications and scaling infrastructure, but only realize the importance of a proper backup strategy after experiencing data loss or system failures.
+
+AWS Backup significantly reduces administrative effort while improving data protection and compliance. For production environments, it should be considered a fundamental component of the architecture from the initial design phase rather than being added later.
+
+---
+
+# Conclusion
+
+AWS Backup enables organizations to build a reliable, secure, and efficient backup and recovery strategy. Through centralized management, automated backup policies, support for multiple AWS services, and advanced features such as Cross-Region and Cross-Account Backup, it enhances data protection and strengthens business continuity.
+
+As data continues to become one of the most valuable assets for modern organizations, implementing AWS Backup is not only a best practice for minimizing operational risks but also a key foundation for building a secure and resilient cloud architecture.
+
+---
+
+# References
+
+- https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html
+- https://aws.amazon.com/backup/
+- https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-plans.html
+- https://docs.aws.amazon.com/aws-backup/latest/devguide/cross-region-backup.html
+- https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-a-backup.html

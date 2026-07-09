@@ -1,126 +1,79 @@
 ---
 title: "Event 2"
-date: 2024-01-01
-weight: 1
+date: 2026-05-23
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+# Event Report: “FCAJ Community Day”
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
-
-### Event Objectives
-
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+### Purpose of the Event
+- Understanding the current IT job market in the AI era and preparing the necessary skills for the future.
+- Learning how to use AI effectively by providing the right context.
+- Building AI assistants (Amazon Q) for enterprise users without deep technical expertise.
+- Exploring Amazon CloudFront (CDN) and its new Flat-rate Pricing model.
+- Learning from the experience of developing a winning product for LotusHackathon within 36 hours.
+- Understanding how to control the randomness of Large Language Models (LLMs).
+- Building enterprise-grade Multi-Agent systems for startup credit assessment.
 
 ### Speakers
-
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **Gia Hung** - Solution Architect, AWS Vietnam
+- **Tinh Truong** - Platform Engineer, GoTymeX
+- **Pham Ng Hai Anh** - AWS Community Builder, G-Asia Pacific Vietnam
+- **Thinh Nguyen** - DevOps Engineer, First Cloud AI Journey
+- **UTMorpho** - LotusHacks 2026
+- **Duc Dao** - Solution Architect, Cloud Kinetics
+- **Vy Lam** - Senior Business Systems Analyst, VPBank
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+### The AI Paradox
+- As AI makes software development cheaper and more efficient, the demand for software will continue to grow dramatically. As a result, software-related job opportunities are also expected to increase in the long term.
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+### Emerging Job Trends
+- New career opportunities will emerge for professionals who can maintain, improve, and scale products, source code, or MVPs created by non-technical users who lack the expertise to operate or extend them.
 
-#### Transitioning to modern application architecture – Microservices
+### New Skill Requirements
+- A university degree and strong fundamental knowledge remain highly valuable. However, candidates should also understand real business problems and build production-ready projects instead of relying solely on demonstration applications to prove their capabilities.
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+### The Importance of Context
+- Avoid asking AI about multiple unrelated topics within the same conversation. Instead, provide clear context about your company, project, or business domain so that AI can generate responses tailored to your actual needs rather than generic information.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+### Cost Management
+- The Flat-rate Pricing model helps organizations completely eliminate the risk of unexpected cloud bills caused by DDoS attacks or sudden traffic spikes, compared to the traditional pay-as-you-go pricing model.
 
-#### Domain-Driven Design (DDD)
+### Infrastructure Security
+- Amazon CloudFront provides built-in protection against Distributed Denial-of-Service (DDoS) attacks, SYN Flood attacks through SYN Proxy, and VPC Origins to protect origin servers from direct public Internet access.
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+### UTMorpho Product Demonstration
+- The team demonstrated an AI-powered interface generation tool that allows users to edit generated interfaces directly instead of regenerating them from scratch, reducing token consumption and saving development time.
 
-#### Event-Driven Architecture
+### Business-Oriented Thinking
+- When designing a solution, developers should first ask:
+  - Who will use it?
+  - What will they use?
+  - Why will they use it?
+  - When will they use it?
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+  Understanding business requirements is more important than focusing solely on technical implementation.
 
-#### Compute Evolution
+### Security Standards in the Banking Industry
+- AI systems deployed in banking environments must comply with strict security requirements, including VPC network isolation, Prompt Injection protection, API key rotation, and audit trails to ensure accountability. Blindly copying and pasting AI-generated code into production systems can introduce significant security risks. A successful AI system should not only work correctly but also operate securely and reliably.
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+### What I Learned
+- Focus on solving practical, real-world problems instead of pursuing overly ambitious ideas.
+- Improve teamwork by dividing responsibilities effectively.
+- Learn how to manage cloud costs and reduce financial risks.
 
-#### Amazon Q Developer
+#### Lessons Learned
+- This event taught me to focus on solving practical problems rather than overly broad ideas, prioritize core features instead of adding unnecessary functionality, and collaborate more effectively by distributing tasks appropriately within a team.
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+#### Some Photos from the Event
+* Add your event photos here.
 
-### Key Takeaways
+![overview](images\4-EventParticipadted\4.2-Event2\image.png)
 
-#### Design Mindset
+![overview](images\4-EventParticipadted\4.2-Event2\image1.png)
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
-
-#### Technical Architecture
-
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
-
-#### Modernization Strategy
-
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
-
-### Applying to Work
-
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
-
-### Event Experience
-
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
-
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
-
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
-
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
-
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
-
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+> Overall, this event not only provided valuable technical knowledge but also helped me develop a better mindset for designing software solutions, modernizing systems, optimizing cloud costs, strengthening infrastructure security, and collaborating more effectively within software development teams.

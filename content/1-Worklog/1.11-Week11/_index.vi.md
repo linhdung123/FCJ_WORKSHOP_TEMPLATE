@@ -1,59 +1,46 @@
 ---
 title: "Worklog Tuần 11"
-date: 2024-01-01
-weight: 2
+date: 2026-06-29
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 11
 
-### Mục tiêu tuần 11:
+* Hoàn thiện tài liệu báo cáo thực tập và các bài blog.
+* Tiếp tục hoàn thiện kiến trúc hệ thống theo góp ý từ mentor.
+* Chuẩn bị cho giai đoạn triển khai demo.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc cần triển khai trong tuần này
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --------- | ------------ | --------------- | -------------- |
+| 2 | Viết báo cáo cho các sự kiện ngày 13/06 và 27/06 | 29/06/2026 | 29/06/2026 | Tài liệu sự kiện |
+| 3 | Viết báo cáo Worklog và bài blog kỹ thuật | 30/06/2026 | 30/06/2026 | Tài liệu thực tập |
+| 4 | Tiếp tục hoàn thiện Worklog và bài blog | 01/07/2026 | 01/07/2026 | Tài liệu thực tập |
+| 5 | Chỉnh sửa sơ đồ kiến trúc theo góp ý của mentor | 02/07/2026 | 02/07/2026 | AWS Architecture Icons |
+| 6 | Tiếp tục hoàn thiện kiến trúc và trao đổi với mentor | 03/07/2026 | 03/07/2026 | AWS Documentation |
 
+### Kết quả đạt được
 
-### Kết quả đạt được tuần 11:
+* Hoàn thiện sơ đồ kiến trúc với bố cục rõ ràng, dễ theo dõi và đúng quy chuẩn hơn.
+* Tiếp thu góp ý từ mentor để cải thiện kiến trúc hệ thống.
+* Hoàn thành phần lớn nội dung báo cáo thực tập và các bài blog kỹ thuật.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Kiến thức học được
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Hiểu cách trình bày sơ đồ kiến trúc theo tiêu chuẩn AWS, sử dụng bố cục hợp lý và các **AWS Architecture Icons**.
+* Biết cách tiếp nhận góp ý và cải thiện kiến trúc dựa trên **AWS Well-Architected Framework**.
+* Rèn luyện kỹ năng viết tài liệu kỹ thuật, Worklog và blog theo nội dung đã thực hiện.
+* Hiểu tầm quan trọng của việc chuẩn bị tài liệu đầy đủ trước khi triển khai và trình bày dự án.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+### Khó khăn gặp phải
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Mất nhiều thời gian chỉnh sửa sơ đồ kiến trúc để đáp ứng các góp ý từ mentor.
+* Cần cân bằng giữa việc hoàn thiện tài liệu và cập nhật kiến trúc dự án trong cùng một thời gian.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+### Mục tiêu tuần tiếp theo
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thành bản demo của dự án.
+* Hoàn thiện và rà soát toàn bộ báo cáo thực tập trước khi nộp.

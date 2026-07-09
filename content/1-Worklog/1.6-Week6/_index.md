@@ -1,57 +1,47 @@
 ---
 title: "Week 6 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-05-25
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 6 Objectives
 
-### Week 6 Objectives:
+* Learn Amazon RDS and Amazon Aurora.
+* Gain hands-on experience deploying relational databases on AWS.
+* Understand application deployment, backup, and database recovery.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Weekly Tasks
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Tasks | Start Date | Completion Date | Learning Resources |
+| --- | ----- | ---------- | --------------- | ------------------ |
+| Monday | - Learn Amazon RDS <br> - Learn Amazon Aurora | 25/05/2026 | 25/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| Tuesday | - Continue learning Amazon RDS and Amazon Aurora <br> - Review architecture and core features | 26/05/2026 | 26/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| Wednesday | - **Hands-on Lab:** <br>&emsp;+ Create an Amazon RDS DB Instance <br>&emsp;+ Connect to the database | 27/05/2026 | 27/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| Thursday | - **Hands-on Lab:** <br>&emsp;+ Deploy an application <br>&emsp;+ Connect the application to Amazon RDS | 28/05/2026 | 28/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| Friday | - **Hands-on Lab:** <br>&emsp;+ Perform database backup and restore | 29/05/2026 | 29/05/2026 | https://cloudjourney.awsstudygroup.com/ |
 
+### Weekly Outcomes
 
-### Week 6 Achievements:
+* Understood the role of Amazon RDS and Amazon Aurora for relational database workloads.
+* Successfully created and configured an Amazon RDS DB instance.
+* Learned the concepts of Automated Backups, Multi-AZ Deployments, and Read Replicas.
+* Deployed an application connected to Amazon RDS.
+* Successfully performed database backup and restore operations.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Knowledge Gained
 
-* Successfully created and configured an AWS Free Tier account.
+* Learned that Amazon RDS is a fully managed relational database service.
+* Gained hands-on experience creating and configuring Amazon RDS DB instances using MySQL, PostgreSQL, and MariaDB.
+* Understood Automated Backups, Multi-AZ Deployments, Read Replicas, and Amazon RDS security features.
+* Practiced connecting an Amazon RDS database through Amazon VPC and Security Groups.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+### Challenges
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Faced challenges configuring Amazon VPC, DB Subnet Groups, and Security Groups for database connectivity.
+* Needed additional time to understand the differences between Multi-AZ Deployments and Read Replicas.
 
-* Used AWS CLI to perform basic operations such as:
+### Objectives for Next Week
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Complete **Lab 000043** on database migration using **AWS Database Migration Service (AWS DMS)** and **AWS Schema Conversion Tool (AWS SCT)**.

@@ -1,57 +1,47 @@
 ---
 title: "Week 10 Worklog"
-date: 2024-01-01
-weight: 2
+date: 2026-06-22
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 10 Objectives
 
-### Week 10 Objectives:
+* Improve AWS architecture design skills.
+* Build the architecture for the internship project.
+* Prepare for the implementation of the new project.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Weekly Tasks
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Tasks | Start Date | Completion Date | Learning Resources |
+| --- | ----- | ---------- | --------------- | ------------------ |
+| Monday | Review AWS reference architectures | 22/06/2026 | 22/06/2026 | AWS Architecture Center |
+| Tuesday | Continue studying AWS architectures and AWS Best Practices | 23/06/2026 | 23/06/2026 | AWS Documentation |
+| Wednesday | Design the AWS architecture diagram for the project | 24/06/2026 | 24/06/2026 | AWS Architecture Icons |
+| Thursday | Refine and improve the architecture diagram based on feedback | 25/06/2026 | 25/06/2026 | AWS Architecture Icons |
+| Friday | Transition to the new project and analyze the project requirements | 26/06/2026 | 26/06/2026 | Project Documentation |
+| Saturday | Attend an AWS community event | 27/06/2026 | 27/06/2026 | AWS Community Event |
 
+### Weekly Outcomes
 
-### Week 10 Achievements:
+* Completed the initial AWS architecture design for the new project.
+* Improved understanding of AWS architecture design principles and AWS Best Practices.
+* Gained additional practical knowledge by participating in an AWS community event.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Knowledge Gained
 
-* Successfully created and configured an AWS Free Tier account.
+* Learned how to organize AWS services in an architecture diagram following the **AWS Well-Architected Framework**.
+* Understood the placement and purpose of services such as **Amazon VPC**, **Public Subnets**, **Private Subnets**, **Amazon EC2**, **Elastic Load Balancing (ELB)**, **Amazon RDS**, and **Amazon S3**.
+* Gained a better understanding of designing architectures for security, scalability, and high availability.
+* Learned the importance of requirement analysis before designing a cloud architecture.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+### Challenges
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Understood the purpose of AWS services but found it difficult to position them correctly in the architecture diagram.
+* Organizing **AWS Architecture Icons** according to AWS design standards required additional practice.
+* Had limited experience estimating AWS costs and selecting appropriate service configurations.
 
-* Used AWS CLI to perform basic operations such as:
+### Objectives for Next Week
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Continue refining the AWS architecture and begin implementing the new project on AWS.

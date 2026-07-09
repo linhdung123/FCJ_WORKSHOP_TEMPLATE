@@ -1,31 +1,23 @@
+```md
 ---
-title: "Translated Blogs"
-date: 2024-01-01
+title: "Translated Blog Articles"
+date: 2026-07-09
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+This section provides an overview of the blog articles that were studied and translated during the AWS internship. These articles cover recently introduced AWS services and features across cloud security, generative AI, and data protection. The summaries below highlight the key concepts, capabilities, and practical use cases presented in each blog.
 
-This section will list and introduce the blogs you have translated. For example:
+### [Blog 1 - Securing Cloud Networks with Amazon VPC Encryption Controls](3.1-Blog1/)
 
-###  [Blog 1 - Getting started with healthcare data lakes: Using microservices](3.1-Blog1/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
+This blog introduces **Amazon VPC Encryption Controls**, a new AWS capability that helps organizations monitor and enforce **encryption in transit** for network traffic between resources within Amazon VPCs. It explains how **Monitor Mode** enables customers to assess the encryption status of existing workloads before enabling **Enforce Mode** to require encrypted network communication. The article also explores the role of the **AWS Nitro System**, supported AWS services, supported exceptions, and the operational benefits of simplifying compliance while helping organizations meet security standards such as **HIPAA**, **PCI DSS**, and **FedRAMP**.
 
-###  [Blog 2 - ...](3.2-Blog2/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
+### [Blog 2 - Web Search on Amazon Bedrock AgentCore](3.2-Blog2/)
 
-###  [Blog 3 - ...](3.3-Blog3/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
+This blog introduces **Web Search on Amazon Bedrock AgentCore**, a fully managed capability that enables AI agents to retrieve up-to-date information from the public web while keeping customer data within the AWS environment. The article explains how AgentCore integrates web search through the **Model Context Protocol (MCP)** and combines public web results with the **Amazon Knowledge Graph** to provide grounded responses with source citations. It also discusses the architectural design, security advantages, enterprise use cases, and key considerations for deploying production-ready AI agents on AWS.
 
-###  [Blog 4 - ...](3.4-Blog4/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
+### [Blog 3 - Protecting Data on AWS with AWS Backup](3.3-Blog3/)
 
-###  [Blog 5 - ...](3.5-Blog5/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
-
-###  [Blog 6 - ...](3.6-Blog6/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
+This blog provides an overview of **AWS Backup**, a fully managed service that centralizes and automates backup and restore operations across multiple AWS services. It introduces core concepts such as **Backup Plans**, **Backup Vaults**, **Cross-Region Backup**, and **Cross-Account Backup**, while explaining how these capabilities help organizations reduce the risk of data loss and strengthen their disaster recovery strategy. The article also highlights best practices for implementing AWS Backup to optimize storage costs, improve data resilience, and support security, governance, and compliance requirements in enterprise cloud environments.
+```

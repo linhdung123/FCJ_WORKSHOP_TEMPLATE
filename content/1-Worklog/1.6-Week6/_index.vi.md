@@ -1,58 +1,47 @@
 ---
 title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+date: 2026-05-25
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 6
 
-### Mục tiêu tuần 6:
+* Tìm hiểu Amazon RDS và Amazon Aurora.
+* Thực hành triển khai cơ sở dữ liệu quan hệ trên AWS.
+* Hiểu quy trình triển khai ứng dụng, sao lưu và khôi phục dữ liệu.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc cần triển khai trong tuần này
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --------- | ------------ | --------------- | -------------- |
+| 2 | - Tìm hiểu Amazon RDS <br> - Tìm hiểu Amazon Aurora | 25/05/2026 | 25/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Tiếp tục tìm hiểu Amazon RDS & Amazon Aurora <br> - Ôn tập kiến trúc và các tính năng | 26/05/2026 | 26/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - **Thực hành:** <br>&emsp;+ Tạo Amazon RDS DB Instance <br>&emsp;+ Kết nối cơ sở dữ liệu | 27/05/2026 | 27/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - **Thực hành:** <br>&emsp;+ Triển khai Application Deployment <br>&emsp;+ Kết nối ứng dụng với Amazon RDS | 28/05/2026 | 28/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 6 | - **Thực hành:** <br>&emsp;+ Backup và Restore Database | 29/05/2026 | 29/05/2026 | https://cloudjourney.awsstudygroup.com/ |
 
+### Kết quả đạt được tuần 6
 
-### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hiểu vai trò của Amazon RDS và Amazon Aurora trong việc triển khai cơ sở dữ liệu quan hệ trên AWS.
+* Thực hành tạo và cấu hình Amazon RDS DB Instance.
+* Hiểu cơ chế Automated Backup, Multi-AZ Deployment và Read Replica.
+* Thực hành triển khai ứng dụng kết nối với Amazon RDS.
+* Thực hiện Backup và Restore cơ sở dữ liệu thành công.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+### Kiến thức học được
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Hiểu Amazon RDS là dịch vụ cơ sở dữ liệu quan hệ được AWS quản lý hoàn toàn.
+* Biết cách tạo và cấu hình RDS DB Instance với các Database Engine như MySQL, PostgreSQL và MariaDB.
+* Hiểu cơ chế Automated Backup, Multi-AZ, Read Replica và các tính năng bảo mật của Amazon RDS.
+* Thực hành kết nối cơ sở dữ liệu thông qua Amazon VPC và Security Group.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+### Khó khăn gặp phải
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Gặp khó khăn khi cấu hình VPC, DB Subnet Group và Security Group để kết nối đến RDS.
+* Mất thời gian phân biệt giữa Multi-AZ Deployment và Read Replica.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+### Mục tiêu tuần tiếp theo
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Thực hiện Lab 000043 về di chuyển dữ liệu bằng AWS Database Migration Service (AWS DMS) và AWS Schema Conversion Tool (AWS SCT).

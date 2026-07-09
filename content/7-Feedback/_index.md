@@ -1,47 +1,68 @@
 ---
-title: "Sharing and Feedback"
-date: 2024-01-01
+title: "Feedback and Suggestions"
+date: 2026-07-09
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+> This section provides an opportunity to share your experience and feedback about participating in the **First Cloud Journey (FCJ)** program. Your comments will help the FCJ team continuously improve the program and provide a better learning experience for future participants.
 
-> Here, you can freely share your personal opinions about your experience participating in the First Cloud Journey program. This will help the FCJ team improve any shortcomings based on the following aspects:
+## Overall Evaluation
 
-### Overall Evaluation
+### 1. Working Environment
 
-**1. Working Environment**  
-The working environment is very friendly and open. FCJ members are always willing to help whenever I encounter difficulties, even outside working hours. The workspace is tidy and comfortable, helping me focus better. However, I think it would be nice to have more social gatherings or team bonding activities to strengthen relationships.
+The working environment was friendly, open, and comfortable. Everyone in FCJ was always willing to help whenever I encountered difficulties, even outside working hours. The workspace was also well organized, making it easier to stay focused. It would be even better if there were more networking activities or team-building events to help members connect and get to know each other better.
 
-**2. Support from Mentor / Team Admin**  
-The mentor provides very detailed guidance, explains clearly when I don’t understand, and always encourages me to ask questions. The admin team supports administrative tasks, provides necessary documents, and creates favorable conditions for me to work effectively. I especially appreciate that the mentor allows me to try and solve problems myself instead of just giving the answer.
+### 2. Support from Mentors and the Admin Team
 
-**3. Relevance of Work to Academic Major**  
-The tasks I was assigned align well with the knowledge I learned at university, while also introducing me to new areas I had never encountered before. This allowed me to both strengthen my foundational knowledge and gain practical skills.
+The mentors were always supportive, providing clear explanations whenever I had questions and encouraging me to think independently before asking for help. The Admin Team also provided all the necessary learning materials and assisted with any program-related issues. I especially appreciated that the mentors encouraged me to solve problems on my own before giving guidance, which helped me develop independent learning and problem-solving skills.
 
-**4. Learning & Skill Development Opportunities**  
-During the internship, I learned many new skills such as using project management tools, teamwork skills, and professional communication in a corporate environment. The mentor also shared valuable real-world experiences that helped me better plan my career path.
+### 3. Relevance to My Academic Background
 
-**5. Company Culture & Team Spirit**  
-The company culture is very positive: everyone respects each other, works seriously but still keeps things enjoyable. When there are urgent projects, everyone works together and supports one another regardless of their position. This made me feel like a real part of the team, even as an intern.
+The assigned tasks were closely related to what I had learned at university while also introducing me to new technologies and practical skills, especially in the field of Cloud Computing. This allowed me to strengthen my fundamental knowledge while gaining valuable hands-on experience.
 
-**6. Internship Policies / Benefits**  
-The company provides an internship allowance and offers flexible working hours when needed. In addition, having the opportunity to join internal training sessions is a big plus.
+### 4. Learning and Professional Development Opportunities
 
----
+Throughout the program, I gained extensive knowledge of AWS, teamwork, task management, and professional communication. In addition, workshops and mentor sharing sessions helped me better understand career paths and industry expectations.
 
-### Additional Questions
-- What did you find **most satisfying** during your internship?  
-- What do you think the company **should improve** for future interns?  
-- If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+### 5. Team Culture and Collaboration
+
+Everyone in FCJ was supportive and willing to share their knowledge and experience. Although each member had different responsibilities, we always collaborated effectively whenever needed. This positive environment kept me motivated throughout the internship.
+
+### 6. Benefits and Support for Participants
+
+FCJ provided excellent opportunities for members to learn, practice, and participate in various technical activities. Besides gaining practical AWS knowledge, I also had the opportunity to attend workshops and seminars while receiving continuous support from mentors throughout the internship.
 
 ---
 
-### Suggestions & Expectations
-- Do you have any suggestions to improve the internship experience?  
-- Would you like to continue this program in the future?  
-- Any other comments (free sharing):
+## Additional Questions
+
+### What was the most satisfying part of your internship?
+
+The most valuable thing I gained was developing the habit of being proactive and taking responsibility for my own learning. I also became familiar with a more professional working environment. What impressed me the most was the dedication of the mentors. Even when we made mistakes, they patiently pointed them out, explained the reasons behind them, and guided us toward the correct solutions instead of simply giving us the answers.
+
+### What improvements would you suggest for future participants?
+
+I think the program could include more hands-on labs focused on **AWS architecture design**, as well as quizzes or practical assessments after the YouTube learning sessions. These would help participants gain a deeper understanding of AWS services and their real-world applications.
+
+### Would you recommend FCJ to friends who are interested in Cloud Computing? Why?
+
+**Yes.** FCJ is an excellent environment for students to prepare for professional work. It provides practical AWS knowledge, real project experience, technical workshops, and opportunities to learn directly from experienced mentors.
+
+---
+
+## Suggestions and Future Expectations
+
+### Do you have any suggestions to help improve the First Cloud Journey program?
+
+I hope FCJ will continue expanding its hands-on learning content, especially architecture design workshops, real-world project scenarios, and cost optimization exercises, to help participants gain a more comprehensive understanding of AWS solutions.
+
+### Would you like to continue participating in future FCJ programs?
+
+**Yes.** If I have the opportunity, I would be very happy to continue participating in future FCJ programs to further improve my cloud computing knowledge and practical skills.
+
+### Additional Comments (Optional)
+
+Thank you to all the mentors and the FCJ team for creating such a supportive learning environment. The internship gave me valuable technical knowledge, practical experience, and professional skills that will be very beneficial for my future career.
+```
