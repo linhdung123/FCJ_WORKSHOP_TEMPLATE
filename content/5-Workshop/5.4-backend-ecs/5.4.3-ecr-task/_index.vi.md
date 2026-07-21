@@ -14,11 +14,11 @@ Bước cuối cùng của việc khởi tạo hạ tầng Backend là chuẩn b
 Truy cập **Amazon ECR** (Elastic Container Registry) và tạo 2 kho chứa Private:
 - `my-app-backend`
 
-![ECR](/images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECR-be.png)
+![ECR](images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECR-be.png)
 
 - `my-app-frontend`
 
-![ECR](/images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECR-fe.png)
+![ECR](images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECR-fe.png)
 
 *(Ở phần CI/CD, GitHub Actions sẽ tự động build code của bạn thành các cục Docker Image và đẩy vào 2 kho chứa này).*
 
@@ -240,9 +240,9 @@ Sau khi tạo Task Definition, cần tạo ECS Service để Amazon ECS duy trì
   - **Backend:** backend-service
   - **Frontend:** frontend-service
 
-  ![ECS](/images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECS.png) 
+  ![ECS](images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECS.png) 
 
-  ![ECS](/images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECS1.png)
+  ![ECS](images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECS1.png)
 
   - **Compute configuration**
   - **Compute options:** Chọn Capacity provider strategy.

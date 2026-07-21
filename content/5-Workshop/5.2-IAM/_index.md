@@ -22,9 +22,9 @@ This is a critical Role attached to the Amazon ECS platform. In our architecture
   - `AmazonSSMReadOnlyAccess` (Permission to read configuration parameters)
   - `SecretsManagerReadWrite` (Permission to read/write password and API key information)
 
-![Permissions policies](/images/5-Workshop/5.2-IAM/ecsTaskExecutionRole.png)
+![Permissions policies](images/5-Workshop/5.2-IAM/ecsTaskExecutionRole.png)
 
-![ecsTaskExecutionRole](/images/5-Workshop/5.2-IAM/ecsTaskExecutionRole.png)
+![ecsTaskExecutionRole](images/5-Workshop/5.2-IAM/ecsTaskExecutionRole.png)
 
 **2. `lambda-order-email-role`**
 This Role carries the core business logic of the Serverless system, handling asynchronous email delivery.

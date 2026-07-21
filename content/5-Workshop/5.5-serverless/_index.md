@@ -19,7 +19,7 @@ For AWS to allow you to send emails, you must verify an email address that you o
 5. Click **Create identity**.
 6. Open your email inbox, find the email from AWS, and click the confirmation link. *Note: Because SES is in Sandbox mode by default, you can only send emails TO addresses that have also been verified.*
 
-![SES](/images/5-Workshop/5.5-serverless/SES.png)
+![SES](images/5-Workshop/5.5-serverless/SES.png)
 
 ### Step 2: Enable DynamoDB Streams for the Orders table
 1. Navigate to **DynamoDB** > **Tables**.
@@ -29,7 +29,7 @@ For AWS to allow you to send emails, you must verify an email address that you o
 5. Select **New and old images** (To retrieve both the newly created order data and the old data).
 6. Click **Turn on stream**.
 
-![DynamoDB_Stream](/images/5-Workshop/5.5-serverless/DynamoDB_Stream.png)
+![DynamoDB_Stream](images/5-Workshop/5.5-serverless/DynamoDB_Stream.png)
 
 ### Step 3: Create an AWS Lambda Function
 1. Navigate to **AWS Lambda** > **Functions** > Click **Create function**.
@@ -42,7 +42,7 @@ For AWS to allow you to send emails, you must verify an email address that you o
 
 6. Click **Create function**.
 
-![Lambda](/images/5-Workshop/5.5-serverless/Lambda.png)
+![Lambda](images/5-Workshop/5.5-serverless/Lambda.png)
 
 - **In the Lambda configuration tab**
 7. **Trigger:** click **+ Add trigger**.
@@ -51,11 +51,11 @@ For AWS to allow you to send emails, you must verify an email address that you o
 10. Leave other parameters (Batch size = 1, Starting position = Latest) as default.
 11. Click **Add**.
 
-![Trigger](/images/5-Workshop/5.5-serverless/Trigger.png)
+![Trigger](images/5-Workshop/5.5-serverless/Trigger.png)
 
-![Trigger](/images/5-Workshop/5.5-serverless/Trigger1.png)
+![Trigger](images/5-Workshop/5.5-serverless/Trigger1.png)
 
-![Trigger](/images/5-Workshop/5.5-serverless/Trigger2.png)
+![Trigger](images/5-Workshop/5.5-serverless/Trigger2.png)
 
 ### Step 4: Write the Lambda Source Code
 In the **Lambda** interface you just created, switch to the **Code** tab. Prepare the Lambda source code including the `index.js` and `template.js` files, then install dependencies using `npm install`.

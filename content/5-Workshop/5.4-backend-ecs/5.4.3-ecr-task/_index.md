@@ -14,11 +14,11 @@ The final step in establishing the Backend infrastructure is preparing the "vaul
 Navigate to **Amazon ECR** (Elastic Container Registry) and create 2 Private repositories:
 - `my-app-backend`
 
-![ECR](/images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECR-be.png)
+![ECR](images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECR-be.png)
 
 - `my-app-frontend`
 
-![ECR](/images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECR-fe.png)
+![ECR](images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECR-fe.png)
 
 *(In the CI/CD section, GitHub Actions will automatically build your code into Docker Images and push them into these repositories).*
 
@@ -240,9 +240,9 @@ After creating the Task Definition, you need to create an ECS Service to instruc
   - **Backend:** `backend-service`
   - **Frontend:** `frontend-service`
 
-  ![ECS1](/images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECS.png)
+  ![ECS1](images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECS.png)
 
-  ![ECS1](/images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECS1.png)
+  ![ECS1](images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECS1.png)
 
 - **Compute configuration**
   - **Compute options:** Select Capacity provider strategy.

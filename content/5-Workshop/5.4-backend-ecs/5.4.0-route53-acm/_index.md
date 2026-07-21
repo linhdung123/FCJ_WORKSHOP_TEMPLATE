@@ -22,13 +22,13 @@ This guide will show you how to create a Hosted Zone in Route 53 to manage your 
 7. Once created, you will see 4 name server addresses in the **Value/Route traffic to** column of the **NS** (Name server) record.
 8. Go back to your third-party domain registrar's dashboard, find the **DNS / Name Servers (NS)** configuration, and replace the existing nameservers with the 4 NS values provided by Route 53. Wait a short time for the DNS to propagate.
 
-![Router53](/images/5-Workshop/5.4-backend-ecs/5.4.0-route53-acm/Route53.png)
-![Router53](/images/5-Workshop/5.4-backend-ecs/5.4.0-route53-acm/Route53_1.png)
+![Router53](images/5-Workshop/5.4-backend-ecs/5.4.0-route53-acm/Route53.png)
+![Router53](images/5-Workshop/5.4-backend-ecs/5.4.0-route53-acm/Route53_1.png)
 
 ### Step 2: Request an SSL Certificate from AWS Certificate Manager (ACM)
 Once your domain is active in the Hosted Zone, you need to create an SSL/TLS certificate.
 **CRITICAL:** Because our architecture will use CloudFront (in section 5.7), you **MUST** switch your AWS Region to **US East (N. Virginia) - us-east-1** before requesting the ACM certificate! (CloudFront only accepts ACM certificates from us-east-1).
-![Region](/images/5-Workshop/5.4-backend-ecs/5.4.0-route53-acm/region.png)
+![Region](images/5-Workshop/5.4-backend-ecs/5.4.0-route53-acm/region.png)
 
 1. Ensure the AWS Region dropdown at the top-right corner is set to **US East (N. Virginia) - us-east-1**.
 2. Navigate to the **AWS Certificate Manager (ACM)** console.
@@ -42,7 +42,7 @@ Once your domain is active in the Hosted Zone, you need to create an SSL/TLS cer
 7. Key algorithm: Leave as **RSA 2048**.
 8. Click **Request**.
 
-![ACM](/images/5-Workshop/5.4-backend-ecs/5.4.0-route53-acm/ACM.png)
+![ACM](images/5-Workshop/5.4-backend-ecs/5.4.0-route53-acm/ACM.png)
 
 ### Step 3: Validate the SSL Certificate (DNS Validation)
 The newly requested certificate will initially have a *Pending validation* status.
@@ -52,4 +52,4 @@ The newly requested certificate will initially have a *Pending validation* statu
 4. A prompt will appear listing the CNAME records. Click **Create records**.
 5. Wait for about 2 to 5 minutes. Route 53 will automatically propagate the DNS records, and your certificate status in ACM will turn green and show as **Issued**.
 
-![ACM](/images/5-Workshop/5.4-backend-ecs/5.4.0-route53-acm/ACM1.png)
+![ACM](images/5-Workshop/5.4-backend-ecs/5.4.0-route53-acm/ACM1.png)

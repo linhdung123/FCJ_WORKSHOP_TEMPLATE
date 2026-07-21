@@ -15,7 +15,7 @@ The **E-commer Serverless Platform** project leverages the power of over 17 diff
 
 Below is the architecture diagram depicting the data flow of the entire system, from when a user accesses the website to when their order is processed and stored.
 
-![System Architecture](/images/5-Workshop/5.1-Overview/architecture.png)
+![System Architecture](images/5-Workshop/5.1-Overview/architecture.png)
 
 
 ---

@@ -65,8 +65,8 @@ pre: " <b> 4.4. </b> "
 #### Some Photos from the Event
 * Add your event photos here.
 
-![overview](images\4-EventParticipadted\4.4-Event4\image.png)
+![overview](images/4-EventParticipadted/4.4-Event4/image.png)
 
-![overview](images\4-EventParticipadted\4.4-Event4\image1.png)
+![overview](images/4-EventParticipadted/4.4-Event4/image1.png)
 
 > Overall, this event provided not only valuable technical knowledge but also broadened my understanding of AI system architecture, cloud infrastructure operations, enterprise security, and modern software engineering practices. It also strengthened my ability to think from both technical and business perspectives when designing AI-powered cloud solutions.

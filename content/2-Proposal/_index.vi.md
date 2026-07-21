@@ -26,7 +26,7 @@ Kiến trúc linh hoạt giúp tối ưu chi phí theo lưu lượng sử dụng
 ### 3. Kiến trúc giải pháp
 Nền tảng sử dụng kiến trúc phân tán với Frontend tĩnh lưu trên S3/CloudFront, gọi API tới Backend được triển khai bằng các container trên ECS qua Application Load Balancer. Dữ liệu phi cấu trúc lưu trữ trên DynamoDB với cơ chế Caching bằng Redis. Các sự kiện phát sinh (ví dụ: tạo đơn hàng) sẽ trigger Lambda qua DynamoDB Streams để xử lý nghiệp vụ gửi Email qua SES.
 
-![E-Commerce Architecture](/images/2-Proposal/architecture.png)
+![E-Commerce Architecture](images/2-Proposal/architecture.png)
 
 *Các dịch vụ AWS cốt lõi được sử dụng (17 dịch vụ)*
 - **Amazon VPC**: Thiết lập mạng lưới nội bộ, Subnets, Route Tables, Internet Gateway.

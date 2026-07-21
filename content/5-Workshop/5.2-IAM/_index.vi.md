@@ -22,9 +22,9 @@ Dựa vào kiến trúc thực tế bạn triển khai, hệ thống sẽ xoay q
   - `AmazonSSMReadOnlyAccess` (Quyền đọc các tham số cấu hình)
   - `SecretsManagerReadWrite` (Quyền đọc/ghi các thông tin mật khẩu, API key)
 
-![Permissions policies](/images/5-Workshop/5.2-IAM/ecsTaskExecutionRole.png)
+![Permissions policies](images/5-Workshop/5.2-IAM/ecsTaskExecutionRole.png)
 
-![ecsTaskExecutionRole](/images/5-Workshop/5.2-IAM/ecsTaskExecutionRole.png)
+![ecsTaskExecutionRole](images/5-Workshop/5.2-IAM/ecsTaskExecutionRole.png)
 
 **2. `lambda-order-email-role`**
 Role này mang nghiệp vụ cốt lõi của hệ thống Serverless, giúp xử lý gửi email bất đồng bộ.
