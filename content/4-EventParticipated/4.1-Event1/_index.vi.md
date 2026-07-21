@@ -71,6 +71,6 @@ Một điểm nổi bật là công cụ **Proptimizer**, một tiện ích mở
 - Cách dùng **BMAD Method** để giúp mình làm project nhanh hơn
 
 #### Một số hình ảnh khi tham gia sự kiện
-![overview] (images/4-EventParticipadted/4.1-Event1/image.png)
-![overview] (images/4-EventParticipadted/4.1-Event1/image1.png)
+![overview] (/FCJ_WORKSHOP_TEMPLATE/images/4-EventParticipadted/4.1-Event1/image.png)
+![overview] (/FCJ_WORKSHOP_TEMPLATE/images/4-EventParticipadted/4.1-Event1/image1.png)
 > Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.

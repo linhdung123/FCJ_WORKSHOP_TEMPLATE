@@ -27,14 +27,14 @@ The flexible architecture optimizes costs based on actual traffic (Pay-as-you-go
 ### 3. Solution Architecture
 The platform utilizes a distributed architecture with a static Frontend hosted on S3/CloudFront, making API calls to Backend containers deployed on ECS via an Application Load Balancer. Unstructured business data is stored on DynamoDB, cached by Redis. System events (e.g., order creation) trigger Lambda functions via DynamoDB Streams to handle business logic like sending emails through SES.
 
-![E-Commerce Architecture](/FCJ_WORKSHOP_TEMPLATE/images/2-Proposal/architecture.png)
+![E-Commerce Architecture](/FCJ_WORKSHOP_TEMPLATE//FCJ_WORKSHOP_TEMPLATE/images/2-Proposal/architecture.png)
 
 *Core AWS Services Used (17 Services)*
 - **Amazon VPC**: Establishes secure internal networking, Subnets, Route Tables, and Internet Gateway.
 - **AWS IAM**: Manages identities, Roles, and Policies for secure access control.
 - **Amazon EC2 & ALB**: Provides compute capacity and Application Load Balancer for traffic distribution.
 - **Amazon ECS**: Orchestrates and runs Docker containers for the Backend.
-- **Amazon ECR**: Securely stores and manages Docker container images.
+- **Amazon ECR**: Securely stores and manages Docker container /FCJ_WORKSHOP_TEMPLATE/images.
 - **AWS Lambda**: Serverless compute functions for handling background tasks (Event-Driven).
 - **Amazon DynamoDB**: NoSQL database for business data storage and triggering Streams.
 - **Amazon S3**: Hosts static Frontend application and user-uploaded files.
@@ -59,7 +59,7 @@ The project was developed over 12 weeks through 4 main phases:
 *Technical Requirements*
 - *Frontend*: React/Next.js integrating Cognito SDK and PayOS Checkout.
 - *Backend*: Node.js/Express or Python containerized with Docker, optimized for async processing.
-- *Infrastructure*: Complete GitHub Actions setup to automatically build images to ECR and deploy to ECS.
+- *Infrastructure*: Complete GitHub Actions setup to automatically build /FCJ_WORKSHOP_TEMPLATE/images to ECR and deploy to ECS.
 
 ### 5. Timeline & Milestones
 - *Phase 1 (Weeks 1-4)*: Core infrastructure setup (VPC, EC2, S3, IAM, CloudFront, DB).
@@ -78,9 +78,9 @@ The project was developed over 12 weeks through 4 main phases:
 | Amazon NAT Gateway | 1 NAT Gateway | ~$33 – $38 |
 | Application Load Balancer (ALB) | 1 ALB + low traffic | ~$16 – $20 |
 | Amazon DynamoDB | On-Demand (PAY_PER_REQUEST) | ~$1 – $5 |
-| Amazon S3 | Frontend + Upload Images (~20 GB) | ~$0.5 – $1 |
+| Amazon S3 | Frontend + Upload /FCJ_WORKSHOP_TEMPLATE/images (~20 GB) | ~$0.5 – $1 |
 | Amazon CloudFront | Traffic <100 GB | ~$1 – $3 |
-| Amazon ECR | Docker Images storage | <$1 |
+| Amazon ECR | Docker /FCJ_WORKSHOP_TEMPLATE/images storage | <$1 |
 | Amazon Route 53 | 1 Hosted Zone | ~$0.50 |
 | AWS Certificate Manager (ACM) | SSL/TLS Certificate | Free |
 | Amazon Cognito | <50,000 MAU | Free |

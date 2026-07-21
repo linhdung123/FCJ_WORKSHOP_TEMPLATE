@@ -26,14 +26,14 @@ Kiến trúc linh hoạt giúp tối ưu chi phí theo lưu lượng sử dụng
 ### 3. Kiến trúc giải pháp
 Nền tảng sử dụng kiến trúc phân tán với Frontend tĩnh lưu trên S3/CloudFront, gọi API tới Backend được triển khai bằng các container trên ECS qua Application Load Balancer. Dữ liệu phi cấu trúc lưu trữ trên DynamoDB với cơ chế Caching bằng Redis. Các sự kiện phát sinh (ví dụ: tạo đơn hàng) sẽ trigger Lambda qua DynamoDB Streams để xử lý nghiệp vụ gửi Email qua SES.
 
-![E-Commerce Architecture](images/2-Proposal/architecture.png)
+![E-Commerce Architecture](/FCJ_WORKSHOP_TEMPLATE/images/2-Proposal/architecture.png)
 
 *Các dịch vụ AWS cốt lõi được sử dụng (17 dịch vụ)*
 - **Amazon VPC**: Thiết lập mạng lưới nội bộ, Subnets, Route Tables, Internet Gateway.
 - **AWS IAM**: Quản lý định danh, Roles và Policies phân quyền truy cập an toàn.
 - **Amazon EC2 & ALB**: Cung cấp năng lực tính toán và Application Load Balancer để phân tải giao thông mạng.
 - **Amazon ECS**: Điều phối và vận hành các Docker containers cho Backend.
-- **Amazon ECR**: Lưu trữ và quản lý các Docker Images an toàn.
+- **Amazon ECR**: Lưu trữ và quản lý các Docker /FCJ_WORKSHOP_TEMPLATE/images an toàn.
 - **AWS Lambda**: Hàm tính toán Serverless xử lý các tác vụ nền (Event-Driven).
 - **Amazon DynamoDB**: Cơ sở dữ liệu NoSQL lưu trữ thông tin nghiệp vụ và kích hoạt Streams.
 - **Amazon S3**: Lưu trữ ứng dụng Frontend tĩnh và tệp tin người dùng tải lên.
@@ -97,9 +97,9 @@ Dự án được phát triển trong vòng 12 tuần với 4 giai đoạn chín
 | Amazon NAT Gateway | 1 NAT Gateway | ~33 – 38 USD |
 | Application Load Balancer (ALB) | 1 ALB + lưu lượng thấp | ~16 – 20 USD |
 | Amazon DynamoDB | On-Demand (PAY_PER_REQUEST) | ~1 – 5 USD |
-| Amazon S3 | Frontend + Upload Images (~20 GB) | ~0.5 – 1 USD |
+| Amazon S3 | Frontend + Upload /FCJ_WORKSHOP_TEMPLATE/images (~20 GB) | ~0.5 – 1 USD |
 | Amazon CloudFront | Lưu lượng <100 GB | ~1 – 3 USD |
-| Amazon ECR | Lưu trữ Docker Images | <1 USD |
+| Amazon ECR | Lưu trữ Docker /FCJ_WORKSHOP_TEMPLATE/images | <1 USD |
 | Amazon Route 53 | 1 Hosted Zone | ~0.50 USD |
 | AWS Certificate Manager (ACM) | SSL/TLS Certificate | Miễn phí |
 | Amazon Cognito | <50.000 MAU | Miễn phí |

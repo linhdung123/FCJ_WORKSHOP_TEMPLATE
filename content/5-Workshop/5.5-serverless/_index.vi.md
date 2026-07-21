@@ -20,17 +20,17 @@ Cụ thể, khi có đơn hàng mới được lưu vào bảng **Orders** trong
 5. Bấm **Create identity**.
 6. Mở hộp thư email của bạn, tìm email từ AWS và bấm vào link xác nhận. *Lưu ý: Do SES đang ở chế độ Sandbox (mặc định), bạn chỉ có thể gửi email ĐẾN các địa chỉ cũng đã được xác thực.*
 
-![SES](images/5-Workshop/5.5-serverless/SES.png)
+![SES](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.5-serverless/SES.png)
 
 ### Bước 2: Bật DynamoDB Streams cho bảng Orders
 1. Truy cập dịch vụ **DynamoDB** > **Tables**.
 2. Bấm vào bảng `Orders`
 3. Chuyển sang tab **Exports and streams**.
 4. Kéo xuống phần **DynamoDB stream details**, bấm **Turn on**.
-5. Chọn **New and old images** (Để lấy cả dữ liệu đơn hàng mới tạo và dữ liệu cũ).
+5. Chọn **New and old /FCJ_WORKSHOP_TEMPLATE/images** (Để lấy cả dữ liệu đơn hàng mới tạo và dữ liệu cũ).
 6. Bấm **Turn on stream**.
 
-![DynamoDB_Stream](images/5-Workshop/5.5-serverless/DynamoDB_Stream.png)
+![DynamoDB_Stream](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.5-serverless/DynamoDB_Stream.png)
 
 ### Bước 3: Tạo AWS Lambda Function
 1. Truy cập dịch vụ **AWS Lambda** > **Functions** > Bấm **Create function**.
@@ -43,7 +43,7 @@ Cụ thể, khi có đơn hàng mới được lưu vào bảng **Orders** trong
 
 6. Bấm **Create function**.
 
-![Lambda](images/5-Workshop/5.5-serverless/Lambda.png)
+![Lambda](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.5-serverless/Lambda.png)
 
 - **Tại tab configuration của lambda**
 7. **Trigger:** bấm **+ Add trigger**.
@@ -52,11 +52,11 @@ Cụ thể, khi có đơn hàng mới được lưu vào bảng **Orders** trong
 10. Các thông số khác (Batch size = 1, Starting position = Latest) giữ nguyên mặc định.
 11. Bấm **Add**.
 
-![Trigger](images/5-Workshop/5.5-serverless/Trigger.png)
+![Trigger](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.5-serverless/Trigger.png)
 
-![Trigger](images/5-Workshop/5.5-serverless/Trigger1.png)
+![Trigger](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.5-serverless/Trigger1.png)
 
-![Trigger](images/5-Workshop/5.5-serverless/Trigger2.png)
+![Trigger](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.5-serverless/Trigger2.png)
 
 ### Bước 4: Viết mã nguồn cho Lambda
 Tại giao diện hàm **Lambda** vừa tạo, chuyển sang tab **Code**. Chuẩn bị mã nguồn Lambda gồm các tệp `index.js` và `template.js`, sau đó cài đặt các thư viện phụ thuộc bằng `npm install`.

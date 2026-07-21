@@ -14,13 +14,13 @@ The final step in establishing the Backend infrastructure is preparing the "vaul
 Navigate to **Amazon ECR** (Elastic Container Registry) and create 2 Private repositories:
 - `my-app-backend`
 
-![ECR](images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECR-be.png)
+![ECR](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECR-be.png)
 
 - `my-app-frontend`
 
-![ECR](images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECR-fe.png)
+![ECR](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECR-fe.png)
 
-*(In the CI/CD section, GitHub Actions will automatically build your code into Docker Images and push them into these repositories).*
+*(In the CI/CD section, GitHub Actions will automatically build your code into Docker /FCJ_WORKSHOP_TEMPLATE/images and push them into these repositories).*
 
 ### 2. Task Definition
 In Amazon ECS, a **Task Definition** is the blueprint describing how one or more containers will be deployed and run on ECS.
@@ -227,7 +227,7 @@ Declare the Container:
 ```
 
 Once complete, select **Create** to register the Task Definition.
-The Task Definition uses **ecsTaskExecutionRole** so ECS has permission to pull Docker Images from Amazon ECR and push logs to Amazon CloudWatch Logs.
+The Task Definition uses **ecsTaskExecutionRole** so ECS has permission to pull Docker /FCJ_WORKSHOP_TEMPLATE/images from Amazon ECR and push logs to Amazon CloudWatch Logs.
 
 ### 3. Create ECS Services
 After creating the Task Definition, you need to create an ECS Service to instruct Amazon ECS to maintain the desired number of running tasks and integrate with the Application Load Balancer (ALB).
@@ -240,9 +240,9 @@ After creating the Task Definition, you need to create an ECS Service to instruc
   - **Backend:** `backend-service`
   - **Frontend:** `frontend-service`
 
-  ![ECS1](images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECS.png)
+  ![ECS1](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECS.png)
 
-  ![ECS1](images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECS1.png)
+  ![ECS1](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.3-ecr-task/ECS1.png)
 
 - **Compute configuration**
   - **Compute options:** Select Capacity provider strategy.

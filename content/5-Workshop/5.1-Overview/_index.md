@@ -15,7 +15,7 @@ The **E-commer Serverless Platform** project leverages the power of over 17 diff
 
 Below is the architecture diagram depicting the data flow of the entire system, from when a user accesses the website to when their order is processed and stored.
 
-![System Architecture](images/5-Workshop/5.1-Overview/architecture.png)
+![System Architecture](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.1-Overview/architecture.png)
 
 
 ---
@@ -32,7 +32,7 @@ The system is divided into 5 main architectural layers. Here is a summary of the
 | | **Amazon Route 53** | DNS service (if using custom domains). |
 | **Storage & Database** | **Amazon DynamoDB** | Ultra-fast NoSQL database storing 13 data tables (User, Product, Order...). |
 | | **Amazon S3** | Stores static Frontend source code (React/Next.js) and media assets. |
-| **Compute & Backend** | **Amazon ECR** | Container registry storing Backend Docker Images. |
+| **Compute & Backend** | **Amazon ECR** | Container registry storing Backend Docker /FCJ_WORKSHOP_TEMPLATE/images. |
 | | **Amazon ECS (Fargate)** | Runs Backend Containers entirely Serverless (no server management). |
 | | **Application Load Balancer** | Distributes user traffic across ECS Tasks. |
 | **Event-Driven Processing**| **AWS Lambda** | Serverless compute function triggered to handle background events. |

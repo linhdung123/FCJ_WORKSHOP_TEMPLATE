@@ -15,16 +15,16 @@ Based on your actual deployment architecture, the system revolves around **5 cor
 ### IAM permissions and roles
 
 **1. `ecsTaskExecutionRole`**
-This is a critical Role attached to the Amazon ECS platform. In our architecture, it not only pulls Images but also grants the Container access to other storage resources.
+This is a critical Role attached to the Amazon ECS platform. In our architecture, it not only pulls /FCJ_WORKSHOP_TEMPLATE/images but also grants the Container access to other storage resources.
 - **How to create:** Create a Role with the `Elastic Container Service Task` Use case. Then, find and attach the following **4 managed Policies**:
-  - `AmazonECSTaskExecutionRolePolicy` (For ECS to pull images and write logs)
+  - `AmazonECSTaskExecutionRolePolicy` (For ECS to pull /FCJ_WORKSHOP_TEMPLATE/images and write logs)
   - `AmazonDynamoDBFullAccess` (Grants full access to the Database)
   - `AmazonSSMReadOnlyAccess` (Permission to read configuration parameters)
   - `SecretsManagerReadWrite` (Permission to read/write password and API key information)
 
-![Permissions policies](images/5-Workshop/5.2-IAM/ecsTaskExecutionRole.png)
+![Permissions policies](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.2-IAM/ecsTaskExecutionRole.png)
 
-![ecsTaskExecutionRole](images/5-Workshop/5.2-IAM/ecsTaskExecutionRole.png)
+![ecsTaskExecutionRole](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.2-IAM/ecsTaskExecutionRole.png)
 
 **2. `lambda-order-email-role`**
 This Role carries the core business logic of the Serverless system, handling asynchronous email delivery.
@@ -60,7 +60,7 @@ This Role is attached directly to the EC2 instances within your ECS Cluster (sup
 - **Attach managed Policies:** Find and attach 2 Policies:
   - `AmazonEC2ContainerServiceforEC2Role`
   - `AmazonSSMManagedInstanceCore`
-- **Attach custom Policy:** Create a new Inline Policy (named `Zopee-Backend-Permission`) with the JSON snippet below. This grants the Backend permission to access Secrets Manager, upload images to S3, and use SQS to process order queues:
+- **Attach custom Policy:** Create a new Inline Policy (named `Zopee-Backend-Permission`) with the JSON snippet below. This grants the Backend permission to access Secrets Manager, upload /FCJ_WORKSHOP_TEMPLATE/images to S3, and use SQS to process order queues:
   ```json
   {
       "Version": "2012-10-17",

@@ -20,7 +20,7 @@ Một vấn đề cố hữu của AI agent là **kiến thức của model bị
 
 Web Search được cung cấp dưới dạng một **connector target dựng sẵn trên AgentCore Gateway**, giao tiếp qua chuẩn Model Context Protocol (MCP). Agent chỉ cần gửi truy vấn bằng ngôn ngữ tự nhiên, Web Search sẽ trả về các đoạn trích (snippet) liên quan nhất kèm URL nguồn, tiêu đề và ngày đăng — đủ ngữ liệu để model suy luận và tạo ra câu trả lời có căn cứ (grounded) kèm trích dẫn.
 
-![Kiến trúc Web Search trên AgentCore](images/agentcore-websearch-architecture.png)
+![Kiến trúc Web Search trên AgentCore](/FCJ_WORKSHOP_TEMPLATE/images/agentcore-websearch-architecture.png)
 
 Các đặc điểm kỹ thuật nổi bật:
 
@@ -33,7 +33,7 @@ Các đặc điểm kỹ thuật nổi bật:
 
 So với cách làm cũ, giá trị vận hành là rất rõ ràng:
 
-![So sánh tự tích hợp vs managed Web Search](images/agentcore-websearch-before-after.png)
+![So sánh tự tích hợp vs managed Web Search](/FCJ_WORKSHOP_TEMPLATE/images/agentcore-websearch-before-after.png)
 
 - **Bỏ được toàn bộ "plumbing"**: không cần đăng ký vendor search riêng, không cần tự viết logic orchestration, xác thực, retry và billing cho việc tìm kiếm.
 - **Đáp ứng yêu cầu tuân thủ**: với các ngành như tài chính, y tế, bảo hiểm — nơi việc gửi prompt của người dùng ra dịch vụ bên ngoài là rào cản pháp lý — kiến trúc zero egress giúp bài toán governance đơn giản đi đáng kể.

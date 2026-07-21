@@ -24,14 +24,14 @@ Trong phần này, chúng ta sẽ tạo một **Amazon CloudFront Distribution**
    - Nếu tên miền được quản lý bởi nhà cung cấp DNS khác, bỏ trống mục này và cấu hình tên miền sau khi Distribution được tạo.
 6. Nhấn **Next** để chuyển sang bước Specify origin.
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront.png)
 
 **Bước 2: Chỉ định Origin**
 1. **Origin type:** Chọn **Elastic Load Balancer**.
 2. **Origin:** Chọn Application Load Balancer (`my-app-alb`) đã tạo ở bước trước.
 3. **Origin path:** Để trống.
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront1.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront1.png)
 
 **Bước 3: Bật bảo mật**
 1. **Enable security protections:** Chọn **Enable security protections**.
@@ -45,7 +45,7 @@ Trong phần này, chúng ta sẽ tạo một **Amazon CloudFront Distribution**
 9. **Cache settings:** Chọn **Use recommended cache settings**.
 10. Nhấn **Next** để chuyển sang bước tiếp theo.
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront2.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront2.png)
 
 **Bước 4: Cấu hình chứng chỉ TLS**
 1. Tại mục **Available certificates**, chọn chứng chỉ ACM đã tạo cho tên miền `zopee.xyz`.
@@ -56,12 +56,12 @@ Trong phần này, chúng ta sẽ tạo một **Amazon CloudFront Distribution**
 4. Nhấn **Next** để chuyển sang bước Review and create.
 5. Bấm **Create distribution**.
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront3.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront3.png)
 
 ### 2. Cấp quyền cho CloudFront đọc S3 Bucket (Bucket Policy)
 Sau khi nhấn Create, nếu CloudFront hiển thị thông báo yêu cầu cập nhật S3 Bucket Policy, hãy bấm Copy policy, sau đó truy cập Amazon S3 → chọn Bucket Frontend → Permissions → Bucket policy → Edit, dán policy vừa sao chép và nhấn Save changes.
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront5.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront5.png)
 
 Nếu lỡ bỏ qua thông báo, bạn vẫn có thể lấy lại và cấu hình Bucket Policy theo các bước sau:
 
@@ -73,7 +73,7 @@ Sau khi cập nhật Bucket Policy, nhấn Save changes.
 
 Nếu Bucket Policy đã chứa quyền cho CloudFront (s3:GetObject) thì không cần thực hiện thêm.
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront4.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront4.png)
 
 ### 3. Truy cập trang web E-commerce của bạn!
 1. Quay lại tab **General** của CloudFront Distribution.
@@ -81,4 +81,4 @@ Nếu Bucket Policy đã chứa quyền cho CloudFront (s3:GetObject) thì khôn
 3. Trạng thái (Last modified) ban đầu sẽ là *Deploying*. Hãy kiên nhẫn đợi khoảng 3-5 phút.
 4. Khi trạng thái hoàn tất, hãy copy link domain name đó, dán vào trình duyệt và chiêm ngưỡng thành quả trang web E-commerce cực kỳ bảo mật và tốc độ cao của bạn!
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront6.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront6.png)

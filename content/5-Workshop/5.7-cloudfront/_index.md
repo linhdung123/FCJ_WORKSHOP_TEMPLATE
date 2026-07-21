@@ -24,14 +24,14 @@ In this section, we will create an **Amazon CloudFront Distribution** (Content D
    - If the domain is managed by another DNS provider, leave this blank and configure the domain after the Distribution is created.
 6. Click **Next** to proceed to the Specify origin step.
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront.png)
 
 **Step 2: Specify Origin**
 1. **Origin type:** Select **Elastic Load Balancer**.
 2. **Origin:** Select the Application Load Balancer (`my-app-alb`) created in the previous step.
 3. **Origin path:** Leave blank.
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront1.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront1.png)
 
 **Step 3: Enable Security**
 1. **Enable security protections:** Select **Enable security protections**.
@@ -45,7 +45,7 @@ In this section, we will create an **Amazon CloudFront Distribution** (Content D
 9. **Cache settings:** Select **Use recommended cache settings**.
 10. Click **Next** to proceed to the next step.
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront2.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront2.png)
 
 **Step 4: Configure TLS Certificate**
 1. Under **Available certificates**, select the ACM certificate created for the domain `zopee.xyz`.
@@ -56,12 +56,12 @@ In this section, we will create an **Amazon CloudFront Distribution** (Content D
 4. Click **Next** to proceed to the Review and create step.
 5. Click **Create distribution**.
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront3.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront3.png)
 
 ### 2. Grant CloudFront access to read the S3 Bucket (Bucket Policy)
 After clicking Create, if CloudFront displays a prompt requiring you to update the S3 Bucket Policy, click Copy policy, then navigate to Amazon S3 → select your Frontend Bucket → Permissions → Bucket policy → Edit, paste the copied policy, and click Save changes.
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront5.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront5.png)
 
 If you missed the prompt, you can still retrieve and configure the Bucket Policy by following these steps:
 
@@ -73,7 +73,7 @@ After updating the Bucket Policy, click Save changes.
 
 If the Bucket Policy already grants access to CloudFront (s3:GetObject), no further action is required.
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront4.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront4.png)
 
 ### 3. Access your E-commerce Website!
 1. Go back to the **General** tab of your CloudFront Distribution.
@@ -81,4 +81,4 @@ If the Bucket Policy already grants access to CloudFront (s3:GetObject), no furt
 3. The status (Last modified) will initially show as *Deploying*. Be patient and wait about 3-5 minutes.
 4. Once deployment is complete, copy that domain name, paste it into your browser, and enjoy your highly secure and blazing-fast E-commerce website!
 
-![Cloudfront](images/5-Workshop/5.7-cloudfront/cloudfront6.png)
+![Cloudfront](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.7-cloudfront/cloudfront6.png)

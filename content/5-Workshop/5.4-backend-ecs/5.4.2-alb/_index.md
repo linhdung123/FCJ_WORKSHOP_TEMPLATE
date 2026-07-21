@@ -22,19 +22,19 @@ Before creating any network resources like a Load Balancer or Target Group, you 
   - **NAT gateways:** Select `Zonal`, Select `1 AZ` or `2 AZ` (To save costs for the Lab, you can select 1 AZ).
   - Click **Create VPC**.
 
-![VPC](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/VPC.png)
+![VPC](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/VPC.png)
 
-![VPC](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/VPC1.png)
+![VPC](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/VPC1.png)
 
 ### Step 2: Create Security Groups
 We need to create 2 Security Groups to control traffic flow:
 1. **`alb-sg` (For Load Balancer):** Allow Inbound HTTP (80) and HTTPS (443) from `0.0.0.0/0` (Internet).
 
-![Security group](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Security-group.png)
+![Security group](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Security-group.png)
 
 2. **`ecs-ec2-sg` (For EC2 Backend):** Allow Inbound from `alb-sg` on ports `8080` (Backend) and `3000` (Frontend). Allow SSH (22) from your IP if needed.
 
-![Security group](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Security-group1.png)
+![Security group](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Security-group1.png)
 
 ### Step 3: Initialize ECS Cluster & Auto Scaling Group
 - **ECS Cluster:** Navigate to the **Amazon ECS** service, create a new cluster and name it `my-app-cluster`.
@@ -46,9 +46,9 @@ We need to create 2 Security Groups to control traffic flow:
     - **Desired capacity:** Minimum 0, Maximum 2.
   - **Root EBS volume size:** 30.
 
-![ECS](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/ECS.png)
+![ECS](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/ECS.png)
 
-![ECS](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/ECS1.png)
+![ECS](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/ECS1.png)
 
   - **SSH Key pair:** Select Create a new key pair:
     - **Name:** ecs-ec2-key
@@ -56,14 +56,14 @@ We need to create 2 Security Groups to control traffic flow:
     - **Private key file format:** .pem
     - **Create key pair.**
 
-![SSH Key pair](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/ECS_key.png)
+![SSH Key pair](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/ECS_key.png)
 
 - **Network settings:**
   - **VPC:** Select `e-commerce-vpc` created in Step 1.
   - **Subnets:** Select 2 **Private Subnets**.
   - **Security Group:** Select `ecs-ec2-sg` created in Step 2.
 
-![ECS](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/ECS2.png)
+![ECS](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/ECS2.png)
 
 - **Auto Scaling Group (ASG):**
   - After creating the ECS Cluster, **Amazon ECS will automatically create** an **Auto Scaling Group (ASG)** and **Launch Template** based on the configured parameters (AMI, EC2 Instance Type, Desired Capacity, Root EBS Volume, Network Settings, etc.).
@@ -80,11 +80,11 @@ Navigate to **EC2 > Target Groups** and create the following 2 groups (Ensure yo
    - Health check path: `/api/health`
 - **Register targets - recommended**: Select 2 EC2 instances from the newly created cluster.
 
-![Register targets](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Target.png)
+![Register targets](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Target.png)
 
-![Register targets](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Target1.png)
+![Register targets](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Target1.png)
 
-![Register targets](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Target2.png)
+![Register targets](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Target2.png)
 
 2. **`frontend-tg`**:
    - Target type: `Instances`
@@ -92,11 +92,11 @@ Navigate to **EC2 > Target Groups** and create the following 2 groups (Ensure yo
    - Health check path: `/`
 - **Register targets - recommended**: Select 2 EC2 instances from the newly created cluster.
 
-![Register targets](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Target3.png)
+![Register targets](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Target3.png)
 
-![Register targets](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Target4.png)
+![Register targets](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Target4.png)
 
-![Register targets](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Target2.png)
+![Register targets](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Target2.png)
 
 ### Step 5: Initialize Application Load Balancer (ALB)
 Navigate to **EC2 > Load Balancers** > Click **Create Load Balancer** > Select **Application Load Balancer** > **Create**.
@@ -105,9 +105,9 @@ Navigate to **EC2 > Load Balancers** > Click **Create Load Balancer** > Select *
 - **Network mapping:** Select `e-commerce-vpc` and check 2 **Public Subnets**.
 - **Security Groups:** Select the `alb-sg` Security Group created in Step 2.
 
-![Load balancer name](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/ALB.png)
+![Load balancer name](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/ALB.png)
 
-![Load balancer name](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/ALB1.png)
+![Load balancer name](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/ALB1.png)
 
 ### Step 6: Configure Listeners & Rules
 This is where you direct the data flow (Routing):
@@ -120,7 +120,7 @@ This is where you direct the data flow (Routing):
 - Port: 443
 - Status code: HTTP_301
 
-![Listener](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Listeners.png)
+![Listener](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Listeners.png)
 
 **Listener HTTPS (443)**
 - Protocol: HTTPS
@@ -130,7 +130,7 @@ This is where you direct the data flow (Routing):
 - Routing action: Forward to target groups
 - Target group: frontend-tg
 
-![Listener](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Listeners1.png)
+![Listener](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Listeners1.png)
 
 **Secure listener settings**
 
@@ -145,4 +145,4 @@ This is where you direct the data flow (Routing):
 
 - **Certificate source**: Your SSL/TLS certificate created for your domain in AWS Certificate Manager (ACM).
 
-![Listener](images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Listeners2.png)
+![Listener](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.4-backend-ecs/5.4.2-alb/Listeners2.png)

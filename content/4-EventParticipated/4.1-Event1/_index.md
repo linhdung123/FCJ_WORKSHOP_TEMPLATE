@@ -80,7 +80,7 @@ One of the highlights was **Proptimizer**, a browser extension that can:
 
 #### Some Photos from the Event
 
-![overview](images/4-EventParticipadted/4.1-Event1/image.png)
-![overview](images/4-EventParticipadted/4.1-Event1/image1.png)
+![overview](/FCJ_WORKSHOP_TEMPLATE/images/4-EventParticipadted/4.1-Event1/image.png)
+![overview](/FCJ_WORKSHOP_TEMPLATE/images/4-EventParticipadted/4.1-Event1/image1.png)
 
 > Overall, the event not only provided valuable technical knowledge but also changed my perspective on application design, system modernization, and more effective collaboration across teams.

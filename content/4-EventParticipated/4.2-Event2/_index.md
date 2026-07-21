@@ -72,8 +72,8 @@ pre: " <b> 4.2. </b> "
 #### Some Photos from the Event
 * Add your event photos here.
 
-![overview](images/4-EventParticipadted/4.2-Event2/image.png)
+![overview](/FCJ_WORKSHOP_TEMPLATE/images/4-EventParticipadted/4.2-Event2/image.png)
 
-![overview](images/4-EventParticipadted/4.2-Event2/image1.png)
+![overview](/FCJ_WORKSHOP_TEMPLATE/images/4-EventParticipadted/4.2-Event2/image1.png)
 
 > Overall, this event not only provided valuable technical knowledge but also helped me develop a better mindset for designing software solutions, modernizing systems, optimizing cloud costs, strengthening infrastructure security, and collaborating more effectively within software development teams.

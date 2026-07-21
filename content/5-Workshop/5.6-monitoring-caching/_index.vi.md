@@ -13,22 +13,22 @@ pre: " <b> 5.6. </b> "
     - Endpoint: Nhập email cá nhân của bạn.
     - Nhớ mở email lên và bấm Confirm.
  
-![SNS](images/5-Workshop/5.6-monitoring-caching/SNS.png)
-![SNS](images/5-Workshop/5.6-monitoring-caching/SNS1.png)
-![SNS](images/5-Workshop/5.6-monitoring-caching/SNS2.png)
-![SNS](images/5-Workshop/5.6-monitoring-caching/SNS3.png)
-![SNS](images/5-Workshop/5.6-monitoring-caching/SNS4.png)
-![SNS](images/5-Workshop/5.6-monitoring-caching/SNS5.png)
-![SNS](images/5-Workshop/5.6-monitoring-caching/SNS6.png)
-![SNS](images/5-Workshop/5.6-monitoring-caching/SNS7.png)
+![SNS](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/SNS.png)
+![SNS](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/SNS1.png)
+![SNS](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/SNS2.png)
+![SNS](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/SNS3.png)
+![SNS](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/SNS4.png)
+![SNS](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/SNS5.png)
+![SNS](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/SNS6.png)
+![SNS](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/SNS7.png)
 
 **CloudWatch Alarm**
 - 1.	Vào CloudWatch > Alarms > Create alarm.
 - 2.	Bấm Select metric > Chọn ECS  > Chọn CPUUtilization.
 
-![Cloud Watch](images/5-Workshop/5.6-monitoring-caching/CloudWatch.png)
-![Cloud Watch](images/5-Workshop/5.6-monitoring-caching/CloudWatch1.png)
-![Cloud Watch](images/5-Workshop/5.6-monitoring-caching/CloudWatch2.png)
+![Cloud Watch](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/CloudWatch.png)
+![Cloud Watch](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/CloudWatch1.png)
+![Cloud Watch](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/CloudWatch2.png)
  
 - Sau khi bấm xong, nó sẽ chuyển sang màn hình tiếp theo. Bạn làm y hệt thế này nhé:
     - **Phần Conditions (Điều kiện)**:
@@ -37,8 +37,8 @@ pre: " <b> 5.6. </b> "
          - Ở cái ô vuông để nhập số, bạn gõ: 80 (ý là nếu CPU vọt qua 80% thì réo chuông).
          - Kéo xuống dưới cùng, bấm Next.
 
-![Cloud Watch](images/5-Workshop/5.6-monitoring-caching/CloudWatch3.png)
-![Cloud Watch](images/5-Workshop/5.6-monitoring-caching/CloudWatch4.png)
+![Cloud Watch](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/CloudWatch3.png)
+![Cloud Watch](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/CloudWatch4.png)
 
 - **Sang màn hình Configure actions**:
     - **Ở phần Configure actions**:
@@ -49,10 +49,10 @@ pre: " <b> 5.6. </b> "
     - Kéo tuốt xuống dưới cùng, bấm Create alarm.
 
 
-![Cloud Watch](images/5-Workshop/5.6-monitoring-caching/CloudWatch5.png)
-![Cloud Watch](images/5-Workshop/5.6-monitoring-caching/CloudWatch6.png)
-![Cloud Watch](images/5-Workshop/5.6-monitoring-caching/CloudWatch7.png)
-![Cloud Watch](images/5-Workshop/5.6-monitoring-caching/CloudWatch8.png)
+![Cloud Watch](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/CloudWatch5.png)
+![Cloud Watch](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/CloudWatch6.png)
+![Cloud Watch](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/CloudWatch7.png)
+![Cloud Watch](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/CloudWatch8.png)
 
 **Tối ưu Tốc độ bằng Amazon ElastiCache (Redis)**
 - 1.  Vào VPC > Security Groups > Create security group.
@@ -64,8 +64,8 @@ pre: " <b> 5.6. </b> "
     - Source: Nhấn vào ô tìm kiếm và chọn Security Group của các EC2 Instance (ecs-sg)
 - 5.  Bấm Create security group.
 
-![ElastiCache](images/5-Workshop/5.6-monitoring-caching/ElastiCache.png)
-![ElastiCache](images/5-Workshop/5.6-monitoring-caching/ElastiCache1.png)
+![ElastiCache](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/ElastiCache.png)
+![ElastiCache](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/ElastiCache1.png)
 
 **Truy cập ElastiCach**
 - 1.  Vào ElastiCache > Redis clusters > Create Redis cluster.
@@ -77,20 +77,20 @@ pre: " <b> 5.6. </b> "
 - 7.  Ở mục Connectivity: Chọn Create a new subnet group. Đặt tên redis-subnet-group, chọn VPC, bấm Manage và chỉ tick chọn 2 cái Private Subnets.
 - 8.  Kéo xuống dưới cùng và bấm Create
 
-![ElastiCache](images/5-Workshop/5.6-monitoring-caching/ElastiCache2.png)
-![ElastiCache](images/5-Workshop/5.6-monitoring-caching/ElastiCache3.png)
-![ElastiCache](images/5-Workshop/5.6-monitoring-caching/ElastiCache4.png)
-![ElastiCache](images/5-Workshop/5.6-monitoring-caching/ElastiCache5.png)
-![ElastiCache](images/5-Workshop/5.6-monitoring-caching/ElastiCache6.png)
+![ElastiCache](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/ElastiCache2.png)
+![ElastiCache](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/ElastiCache3.png)
+![ElastiCache](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/ElastiCache4.png)
+![ElastiCache](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/ElastiCache5.png)
+![ElastiCache](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/ElastiCache6.png)
  
 Tại Advanced settings
 Selected security group: Chọn security group đã tạo trước đó - > next - > create
  
- ![ElastiCache](images/5-Workshop/5.6-monitoring-caching/ElastiCache7.png)
+ ![ElastiCache](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/ElastiCache7.png)
 
 Sẽ mất khoảng 5 phút để cụm này khởi tạo
 
-![ElastiCache](images/5-Workshop/5.6-monitoring-caching/ElastiCache8.png)
+![ElastiCache](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.6-monitoring-caching/ElastiCache8.png)
  
 1.	Sau khi cụm Redis báo trạng thái Available, bấm vào tên của nó.
 2.	Tìm dòng Primary endpoint, copy cái URL đó (Ví dụ: zopee-redis.xxxx.use1.cache.amazonaws.com:6379).

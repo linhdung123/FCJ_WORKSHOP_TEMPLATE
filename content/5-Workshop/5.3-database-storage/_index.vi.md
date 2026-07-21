@@ -36,11 +36,11 @@ Hệ thống của chúng ta sử dụng thiết kế phân rã dữ liệu thà
 12. **`support_tickets`** (Partition key: `id` - String)
 13. **`order_table`** (Partition key: `id` - String, Sort key: `createdAt` - Number)
 
-![Create Table](images/5-Workshop/5.3-database-storage/Createtable.png)
+![Create Table](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/Createtable.png)
 
-![Enable PITR](images/5-Workshop/5.3-database-storage/PITR.png)
+![Enable PITR](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/PITR.png)
 
-![13 Tables Created](images/5-Workshop/5.3-database-storage/13table.png)
+![13 Tables Created](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/13table.png)
 
 ---
 
@@ -51,7 +51,7 @@ Truy cập Amazon S3 và bấm **Create bucket**. *Lưu ý: Tên bucket trên AW
 
 **Bucket 1: Bucket chứa ảnh Upload (Ví dụ: `my-app-uploads`)**
 
-![Upload image](images/5-Workshop/5.3-database-storage/S3Fe_static.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Fe_static.png)
 
 Dùng để chứa hình ảnh sản phẩm hoặc avatar người dùng do Backend xử lý tải lên.
 
@@ -67,9 +67,9 @@ Dùng để chứa hình ảnh sản phẩm hoặc avatar người dùng do Back
 - **Block all public access:** Tích BẬT (Backend sẽ đảm nhiệm việc tạo presigned-URL để xem ảnh, đảm bảo bảo mật tuyệt đối cho dữ liệu).
 - **Bucket Versioning:** BẬT (Lưu lại các phiên bản của file để phòng trường hợp vô tình ghi đè nhầm).
 
-![Upload image](images/5-Workshop/5.3-database-storage/S3Fe_static.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Fe_static.png)
 
-![Upload image](images/5-Workshop/5.3-database-storage/S3Fe_static1.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Fe_static1.png)
 
 **Bucket 2: Bucket chứa Frontend (Ví dụ: `my-app-fe-static`)**
 Dùng để chứa bộ mã nguồn tĩnh của Frontend (React/Next.js) sau khi đã build (thư mục `dist/client/*`).
@@ -85,6 +85,6 @@ Dùng để chứa bộ mã nguồn tĩnh của Frontend (React/Next.js) sau khi
 - **Block all public access:** Tích BẬT. (Trang web Frontend sẽ không truy cập trực tiếp bằng link S3 mà phải đi vòng qua mạng CDN CloudFront bằng phương thức Origin Access Control - OAC).
 - **Bucket Versioning:** BẬT.
 
-![Upload image](images/5-Workshop/5.3-database-storage/S3Upload.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Upload.png)
 
-![Upload image](images/5-Workshop/5.3-database-storage/S3Upload1.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Upload1.png)

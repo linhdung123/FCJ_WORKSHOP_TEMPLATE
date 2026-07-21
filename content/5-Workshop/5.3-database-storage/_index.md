@@ -8,7 +8,7 @@ pre: " <b> 5.3. </b> "
 
 # Database and Storage Initialization
 
-In an E-commerce system, data is the most valuable asset. In this step, we will set up **Amazon DynamoDB** as a high-speed NoSQL database for our Backend and **Amazon S3** to store static assets (images, frontend code).
+In an E-commerce system, data is the most valuable asset. In this step, we will set up **Amazon DynamoDB** as a high-speed NoSQL database for our Backend and **Amazon S3** to store static assets (/FCJ_WORKSHOP_TEMPLATE/images, frontend code).
 
 ---
 
@@ -36,11 +36,11 @@ To create a table, navigate to the **DynamoDB** service on the AWS Console and c
 12. **`support_tickets`** (Partition key: `id` - String)
 13. **`order_table`** (Partition key: `id` - String, Sort key: `createdAt` - Number)
 
-![Create Table](images/5-Workshop/5.3-database-storage/Createtable.png)
+![Create Table](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/Createtable.png)
 
-![Enable PITR](images/5-Workshop/5.3-database-storage/PITR.png)
+![Enable PITR](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/PITR.png)
 
-![13 Tables Created](images/5-Workshop/5.3-database-storage/13table.png)
+![13 Tables Created](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/13table.png)
 
 ---
 
@@ -51,9 +51,9 @@ Navigate to Amazon S3 and click **Create bucket**. *Note: Bucket names on AWS mu
 
 **Bucket 1: Uploads Bucket (Example: `my-app-uploads`)**
 
-![Upload image](images/5-Workshop/5.3-database-storage/S3Fe_static.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Fe_static.png)
 
-Used to store product images or user avatars uploaded and processed by the Backend.
+Used to store product /FCJ_WORKSHOP_TEMPLATE/images or user avatars uploaded and processed by the Backend.
 
 **Note when choosing Global namespace**:
 
@@ -64,12 +64,12 @@ Used to store product images or user avatars uploaded and processed by the Backe
     `my-app-uploads-e-commerce`
 
 **Configuration**:
-- **Block all public access:** Turn ON (The Backend will handle generating presigned-URLs to view images, ensuring absolute data security).
+- **Block all public access:** Turn ON (The Backend will handle generating presigned-URLs to view /FCJ_WORKSHOP_TEMPLATE/images, ensuring absolute data security).
 - **Bucket Versioning:** Turn ON (Keeps versions of files in case of accidental overwrites).
 
-![Upload image](images/5-Workshop/5.3-database-storage/S3Fe_static.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Fe_static.png)
 
-![Upload image](images/5-Workshop/5.3-database-storage/S3Fe_static1.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Fe_static1.png)
 
 **Bucket 2: Frontend Static Bucket (Example: `my-app-fe-static`)**
 Used to store the static source code of the Frontend (React/Next.js) after it has been built (the `dist/client/*` directory).
@@ -85,6 +85,6 @@ Used to store the static source code of the Frontend (React/Next.js) after it ha
 - **Block all public access:** Turn ON. (The Frontend website will not be accessed directly via the S3 link; it will route through the CloudFront CDN network using the Origin Access Control - OAC method).
 - **Bucket Versioning:** Turn ON.
 
-![Upload image](images/5-Workshop/5.3-database-storage/S3Upload.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Upload.png)
 
-![Upload image](images/5-Workshop/5.3-database-storage/S3Upload1.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Upload1.png)
