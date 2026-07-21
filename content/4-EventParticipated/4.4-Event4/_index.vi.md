@@ -55,6 +55,6 @@ pre: " <b> 4.4. </b> "
 
 #### Một số hình ảnh khi tham gia sự kiện
 * Thêm các hình ảnh của các bạn tại đây
-![overview] (/FCJ_WORKSHOP_TEMPLATE/images/4-EventParticipadted/4.4-Event4/image.png)
-![overview] (/FCJ_WORKSHOP_TEMPLATE/images/4-EventParticipadted/4.4-Event4/image1.png)
+![overview](/FCJ_WORKSHOP_TEMPLATE/images/4-EventParticipadted/4.4-Event4/image.png)
+![overview](/FCJ_WORKSHOP_TEMPLATE/images/4-EventParticipadted/4.4-Event4/image1.png)
 > Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
