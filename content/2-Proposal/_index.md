@@ -27,7 +27,7 @@ The flexible architecture optimizes costs based on actual traffic (Pay-as-you-go
 ### 3. Solution Architecture
 The platform utilizes a distributed architecture with a static Frontend hosted on S3/CloudFront, making API calls to Backend containers deployed on ECS via an Application Load Balancer. Unstructured business data is stored on DynamoDB, cached by Redis. System events (e.g., order creation) trigger Lambda functions via DynamoDB Streams to handle business logic like sending emails through SES.
 
-![E-Commerce Architecture](images/2-Proposal/architecture.png)
+![E-Commerce Architecture](/FCJ_WORKSHOP_TEMPLATE/images/2-Proposal/architecture.png)
 
 *Core AWS Services Used (17 Services)*
 - **Amazon VPC**: Establishes secure internal networking, Subnets, Route Tables, and Internet Gateway.
