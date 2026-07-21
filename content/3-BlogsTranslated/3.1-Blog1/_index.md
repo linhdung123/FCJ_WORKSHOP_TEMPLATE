@@ -1,5 +1,4 @@
 ---
-
 title: "Blog 1"
 date: 2026-06-04
 weight: 1

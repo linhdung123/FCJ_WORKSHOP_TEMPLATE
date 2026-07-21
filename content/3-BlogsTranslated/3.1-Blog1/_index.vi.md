@@ -1,11 +1,9 @@
 ---
-
 title: "Blog 1"
 date: 2026-06-04
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
-
 ---
 
 # Bảo Mật Đám Mây Với Amazon VPC Encryption Controls
