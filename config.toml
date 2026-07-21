@@ -1,6 +1,6 @@
 baseURL = "https://linhdung123.github.io/FCJ_WORKSHOP_TEMPLATE/"
-relativeURLs = false
-canonifyURLs = true
+canonifyURLs = false
+relativeURLs = true
 defaultContentLanguage = "en"
 
 # Change the default theme to be use when building the site with Hugo
