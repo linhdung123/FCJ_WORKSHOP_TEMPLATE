@@ -87,4 +87,4 @@ Used to store the static source code of the Frontend (React/Next.js) after it ha
 
 ![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Upload.png)
 
-![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3ugipload1.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3upload1.png)
