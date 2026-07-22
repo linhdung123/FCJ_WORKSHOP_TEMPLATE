@@ -27,7 +27,7 @@ Follow the steps below sequentially:
 ![CloudFront Delete](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.9-cleanup/Subnetgroup.png)
 
 3. Navigate to **Amazon CloudWatch** → **Alarms** → Select the created CPU Alarm → **Actions** → **Delete**.
-![CloudFront Delete](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.9-cleanup/CloudWatch.png)
+![CloudFront Delete](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.9-cleanup/Cloudwatch.png)
 
 4. Navigate to **Amazon SNS** → **Topics** → Select the `system-alerts` Topic → **Delete**.
 ![CloudFront Delete](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.9-cleanup/SNS.png)
@@ -72,7 +72,7 @@ Follow the steps below sequentially:
 ### 6. Delete VPC & Security Groups
 1. Navigate to **VPC** > **NAT Gateways** > Select your NAT Gateway > Click **Delete NAT gateway**. *(Wait 2-3 minutes for it to be fully deleted)*.
 
-![CloudFront Delete](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.9-cleanup/Nat.png)
+![CloudFront Delete](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.9-cleanup/NAT.png)
 
 2. Navigate to **VPC** > **Elastic IPs** > Select the EIP attached to the NAT Gateway > **Actions** > **Release Elastic IP addresses**.
 

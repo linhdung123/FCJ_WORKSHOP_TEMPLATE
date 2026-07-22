@@ -27,7 +27,7 @@ Hãy thực hiện lần lượt các bước dưới đây:
 ![CloudFront Delete](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.9-cleanup/Subnetgroup.png)
 
 3. Truy cập **Amazon CloudWatch** → **Alarms** → Chọn Alarm CPU đã tạo → **Actions** → **Delete**.
-![CloudFront Delete](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.9-cleanup/CloudWatch.png)
+![CloudFront Delete](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.9-cleanup/Cloudwatch.png)
 
 4. Truy cập **Amazon SNS** → **Topics** → Chọn Topic `system-alerts` → **Delete**.
 ![CloudFront Delete](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.9-cleanup/SNS.png)
@@ -72,7 +72,7 @@ Hãy thực hiện lần lượt các bước dưới đây:
 ### 6. Xóa VPC & Security Groups
 1. Truy cập **VPC** > **NAT Gateways** > Chọn NAT Gateway > Bấm **Delete NAT gateway**. *(Chờ khoảng 2-3 phút để NAT Gateway bị xóa hoàn toàn)*.
 
-![CloudFront Delete](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.9-cleanup/Nat.png)
+![CloudFront Delete](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.9-cleanup/NAT.png)
 
 2. Truy cập **VPC** > **Elastic IPs** > Chọn EIP của NAT Gateway > **Actions** > **Release Elastic IP addresses**.
 
