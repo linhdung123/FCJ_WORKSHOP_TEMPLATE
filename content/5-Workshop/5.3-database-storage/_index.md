@@ -69,7 +69,7 @@ Used to store product /FCJ_WORKSHOP_TEMPLATE/images or user avatars uploaded and
 
 ![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Fe_static.png)
 
-![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Fe_static1.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3FE_static1.png)
 
 **Bucket 2: Frontend Static Bucket (Example: `my-app-fe-static`)**
 Used to store the static source code of the Frontend (React/Next.js) after it has been built (the `dist/client/*` directory).
@@ -87,4 +87,4 @@ Used to store the static source code of the Frontend (React/Next.js) after it ha
 
 ![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Upload.png)
 
-![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Upload1.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3ugipload1.png)

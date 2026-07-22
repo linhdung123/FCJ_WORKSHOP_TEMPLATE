@@ -69,7 +69,7 @@ Dùng để chứa hình ảnh sản phẩm hoặc avatar người dùng do Back
 
 ![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Fe_static.png)
 
-![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Fe_static1.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3FE_static1.png)
 
 **Bucket 2: Bucket chứa Frontend (Ví dụ: `my-app-fe-static`)**
 Dùng để chứa bộ mã nguồn tĩnh của Frontend (React/Next.js) sau khi đã build (thư mục `dist/client/*`).
@@ -87,4 +87,4 @@ Dùng để chứa bộ mã nguồn tĩnh của Frontend (React/Next.js) sau khi
 
 ![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Upload.png)
 
-![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3Upload1.png)
+![Upload image](/FCJ_WORKSHOP_TEMPLATE/images/5-Workshop/5.3-database-storage/S3upload1.png)
